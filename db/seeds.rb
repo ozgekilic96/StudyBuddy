@@ -86,7 +86,7 @@ Subject.create!(
   name: "Pedagogy"
 )
 Subject.create!(
-  name: "Business Admin"
+  name: "Business Administration"
 )
 Subject.create!(
   name: "Law"
@@ -97,18 +97,14 @@ Subject.create!(
 Subject.create!(
   name: "Humanities"
 )
-Subject.create!(
-  name: "Literature"
-)
+
 Subject.create!(
   name: "Computer Science"
 )
 Subject.create!(
   name: "Social studies"
 )
-Subject.create!(
-  name: "Philosophy"
-)
+
 
 Group.create!(
   name: "Atomic and chemical physics",
@@ -149,5 +145,363 @@ Group.create!(
   description: "Join us for bright future",
   group_picture: "genetics.jpg",
   subject_id: 2,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Clinical psychology",
+  description: "",
+  group_picture: "",
+  subject_id: 3,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Abnormal psychology",
+  description: "",
+  group_picture: "",
+  subject_id: 3,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "chizophrenia",
+  description: "",
+  group_picture: "",
+  subject_id: 3,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Statistics",
+  description: "",
+  group_picture: "",
+  subject_id: 4,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Algebra",
+  description: "",
+  group_picture: "",
+  subject_id: 4,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Calculus",
+  description: "",
+  group_picture: "",
+  subject_id: 4,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Anatomy and Physiology",
+  description: "",
+  group_picture: "",
+  subject_id: 5,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Sports medicine",
+  description: "",
+  group_picture: "",
+  subject_id: 5,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Sports Nutrition",
+  description: "",
+  group_picture: "",
+  subject_id: 5,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Plant Pathology",
+  description: "",
+  group_picture: "",
+  subject_id: 6,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Crop Science",
+  description: "",
+  group_picture: "",
+  subject_id: 6,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Horticulture",
+  description: "",
+  group_picture: "",
+  subject_id: 6,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Cultural and Historical Geography:",
+  description: "",
+  group_picture: "",
+  subject_id: 7,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Geography of Health and Disease",
+  description: "",
+  group_picture: "",
+  subject_id: 7,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Geopolitics",
+  description: "",
+  group_picture: "",
+  subject_id: 7,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Organic Chemistry",
+  description: "",
+  group_picture: "",
+  subject_id: 8,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Nanotechnology",
+  description: "",
+  group_picture: "",
+  subject_id: 8,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Biochemistry",
+  description: "",
+  group_picture: "",
+  subject_id: 8,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Microeconomics",
+  description: "",
+  group_picture: "",
+  subject_id: 9,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Macroeconomics",
+  description: "",
+  group_picture: "",
+  subject_id: 9,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Industrial Organization",
+  description: "",
+  group_picture: "",
+  subject_id: 9,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Industrial Engineering",
+  description: "",
+  group_picture: "",
+  subject_id: 10,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Mechatronics Engineering",
+  description: "",
+  group_picture: "",
+  subject_id: 10,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Civil Engineering",
+  description: "",
+  group_picture: "",
+  subject_id: 10,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Music",
+  description: "",
+  group_picture: "",
+  subject_id: 11,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Art History",
+  description: "",
+  group_picture: "",
+  subject_id: 11,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Digital Arts",
+  description: "",
+  group_picture: "",
+  subject_id: 11,
+  user_id: rand(1..120)
+)
+
+Group.create!(
+  name: "Urban Planning and Design",
+  description: "",
+  group_picture: "",
+  subject_id: 12,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Interior Architecture and Design",
+  description: "",
+  group_picture: "",
+  subject_id: 12,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Architectural History",
+  description: "",
+  group_picture: "",
+  subject_id: 12,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Motivation and Engagement",
+  description: "",
+  group_picture: "",
+  subject_id: 13,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Critical Pedagogy",
+  description: "",
+  group_picture: "",
+  subject_id: 13,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Reflective Practice",
+  description: "",
+  group_picture: "",
+  subject_id: 13,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Human Resource Management",
+  description: "",
+  group_picture: "",
+  subject_id: 14,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Marketing",
+  description: "",
+  group_picture: "",
+  subject_id: 14,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Management Principles",
+  description: "",
+  group_picture: "",
+  subject_id: 14,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Criminal Law",
+  description: "",
+  group_picture: "",
+  subject_id: 15,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Civil Law",
+  description: "",
+  group_picture: "",
+  subject_id: 15,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Administrative Law",
+  description: "",
+  group_picture: "",
+  subject_id: 15,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Slovenian",
+  description: "",
+  group_picture: "",
+  subject_id: 16,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Ukranian",
+  description: "",
+  group_picture: "",
+  subject_id: 16,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Swedish",
+  description: "",
+  group_picture: "",
+  subject_id: 16,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Literature",
+  description: "",
+  group_picture: "",
+  subject_id: 17,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "History",
+  description: "",
+  group_picture: "",
+  subject_id: 17,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Philosophy",
+  description: "",
+  group_picture: "",
+  subject_id: 17,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Cybersecurity",
+  description: "",
+  group_picture: "",
+  subject_id: 18,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Software Engineering",
+  description: "",
+  group_picture: "",
+  subject_id: 18,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Artificial Intelligence",
+  description: "",
+  group_picture: "",
+  subject_id: 18,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Human Rights Studies",
+  description: "",
+  group_picture: "",
+  subject_id: 19,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Sociology",
+  description: "",
+  group_picture: "",
+  subject_id: 19,
+  user_id: rand(1..120)
+)
+Group.create!(
+  name: "Anthropology",
+  description: "",
+  group_picture: "",
+  subject_id: 19,
   user_id: rand(1..120)
 )
