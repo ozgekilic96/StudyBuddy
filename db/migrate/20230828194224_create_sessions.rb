@@ -3,6 +3,7 @@ class CreateSessions < ActiveRecord::Migration[7.0]
     create_table :sessions do |t|
       t.datetime :time, null: false
       t.string :name, null: false
+      t.string :session_picture
       t.string :address, null: false
       t.references :group, null: false, foreign_key: true
 

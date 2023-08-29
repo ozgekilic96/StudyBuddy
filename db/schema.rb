@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
+    t.string "group_picture"
     t.bigint "user_id", null: false
     t.bigint "subject_id", null: false
     t.datetime "created_at", null: false
@@ -55,6 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
   create_table "sessions", force: :cascade do |t|
     t.datetime "time", null: false
     t.string "name", null: false
+    t.string "session_picture"
     t.string "address", null: false
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
@@ -76,7 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.string "last_name"
+    t.string "first_name"
     t.string "address"
     t.string "phone_number"
     t.integer "age"
