@@ -1,52 +1,49 @@
 <div class="container-signup">
   <div class="row justify-content-center">
     <div class="col-md-6">
-          <h2 class="card-title">Sign up</h2>
-
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
-            <div class="card bg-opacity-40 mt-3 signup">
-              <div class="form-inputs">
-                <%= f.input :first_name,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "first_name" }%>
-                <%= f.input :last_name,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "last_name" }%>
-                <%= f.input :email,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "email" }%>
-                <%= f.input :password,
-                            required: true,
-                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                            input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
-                            required: true,
-                            input_html: { autocomplete: "new-password" } %>
-                <%= f.input :address,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "address" }%>
-                <%= f.input :age,
-                            required: true,
-                            autofocus: true,
-                            input_html: { autocomplete: "age" }%>
-                <%= f.input :phone_number,
-                            autofocus: true,
-                            input_html: { autocomplete: "phone_number" }%>
-                <%= f.input :picture,
-                            autofocus: true,
-                            input_html: { autocomplete: "picture" }%>
-              </div>
+      <h2 class="text-center">Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="d-flex justify-content-center">
+          <div class="card bg-opacity-40 mt-3 signup text-center">
+            <div class="form-inputs text-center">
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "first_name" }%>
+              <%= f.input :last_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "last_name" }%>
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" }%>
+              <%= f.input :password,
+                          required: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" } %>
+              <%= f.input :address,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "address" }%>
+              <%= f.input :age,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "age" }%>
+              <%= f.input :phone_number,
+                          autofocus: true,
+                          input_html: { autocomplete: "phone_number" }%>
             </div>
-            <div class="form-actions text-center">
-              <%= f.button :submit, "create account" %>
-            </div>
-          <% end %>
-      </div>
+          </div>
+        </div>
+        <div class="form-actions text-center mt-3">
+          <%= f.button :submit, "create account" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
