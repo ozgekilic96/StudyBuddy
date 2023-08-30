@@ -1,4 +1,7 @@
-<%= @my_groups.each do |group| %>
-  <%= group.name %>
-
-<% end %>
+<div class="cards">
+  <% @my_groups.each do |group| %>
+      <%= image_tag group.group_picture %>
+        <%= group.name %>
+        <%= group.description %>
+  <% end %>
+</div>

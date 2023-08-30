@@ -37,7 +37,7 @@ User.create!(
   email: "ozgeklc096@gmail.com",
   password: "123456",
   address: Faker::Address.street_address,
-  picture: "" ,
+  picture: "",
   age: 27
 )
 
@@ -527,8 +527,19 @@ Group.create!(
 )
 Group.create!(
   name: "Philosophy of Science",
-  description: "Welcome to most surpotive group.",
+  description: "Welcome to most supportive group.",
   group_picture: "philo.jpeg",
   subject_id: 20,
   user_id: rand(1..120)
 )
+# seed.rb
+
+# Create 5 membership records
+50.times do
+  Membership.create!(
+    group_id: Group.pluck(:id).sample,
+    user_id: User.pluck(:id).sample,
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+end

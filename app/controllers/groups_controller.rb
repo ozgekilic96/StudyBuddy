@@ -5,7 +5,6 @@ class GroupsController < ApplicationController
     @my_groups = Group.where(id: @group_ids)
   end
   def show
-    @user = current_user
     @group = Group.find(params[:id])
   end
 
