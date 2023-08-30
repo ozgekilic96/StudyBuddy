@@ -12,7 +12,9 @@ class PagesController < ApplicationController
   end
 
   def subjects
+    @interested_subject = InterestedSubject.new
     @user = current_user
+    @subjects = Subject.all
   end
 
   def edit

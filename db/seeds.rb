@@ -27,7 +27,8 @@ User.create!(
   email: "giovane.nery@hotmail.com",
   password: "123456",
   address: Faker::Address.street_address,
-  picture: "Giovane.png"
+  picture: "Giovane.png",
+  age: 24
 )
 User.create!(
   first_name: "Ozge",
@@ -35,15 +36,16 @@ User.create!(
   email: "ozgeklc096@gmail.com",
   password: "123456",
   address: Faker::Address.street_address,
-  picture: "ozge.jpg"
-
+  picture: "ozge.jpg",
+  age: 24
 )
 User.create!(
   first_name: "Ulrich",
   last_name: "Thofehrn",
   email: "welfito@icloud.com",
   password: "123456",
-  address: Faker::Address.street_address
+  address: Faker::Address.street_address,
+  age: 24
 )
 
 Subject.create!(
@@ -97,7 +99,6 @@ Subject.create!(
 Subject.create!(
   name: "Humanities"
 )
-
 Subject.create!(
   name: "Computer Science"
 )

@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
   end
 
   private
+
   def group_params
     params.require(:group).permit(:name, :description)
   end
@@ -41,5 +42,4 @@ class GroupsController < ApplicationController
     current_user.groups << @group
     redirect_to @group, notice: 'You have joined the group.'
   end
-  
 end

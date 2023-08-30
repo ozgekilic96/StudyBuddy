@@ -1,1 +1,8 @@
-Subjects page
+<div class="text-center mt-5">
+  <h2>Choose your subjects of interest</h2>
+</div>
+<%= @categories %>
+<%= simple_form_for(@interested_subject) do |f| %>
+  <%= f.association :subject, collection: @subjects,  as: :check_boxes, include_hidden: false, input_html: {multiple: true, checked: current_user.subject_ids } %>
+  <%= f.submit "Save" %>
+<% end %>
