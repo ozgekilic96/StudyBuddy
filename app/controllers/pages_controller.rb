@@ -11,6 +11,10 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def subjects
+    @user = current_user
+  end
+
   def edit
   end
 
