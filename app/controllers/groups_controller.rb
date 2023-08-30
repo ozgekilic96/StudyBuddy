@@ -1,4 +1,9 @@
 class GroupsController < ApplicationController
+  def index
+    @user = current_user
+    @group_ids = @user.memberships.pluck(:group_id)
+    @my_groups = Group.where(id: @group_ids)
+  end
   def show
     @user = current_user
     @group = Group.find(params[:id])
@@ -16,15 +21,11 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-
-  private
-
-  def group_params
-    params.require(:group).permit(:name, :description)
-  end
-
   def edit
-    @group = current_user.groups.find(params[:id])
+    @group = Group.find(params[:id])
+    if @group.user != current_user
+      redirect_to @group, alert: 'You do not have permission to edit this group.'
+    end
   end
 
   def update
@@ -39,7 +40,14 @@ class GroupsController < ApplicationController
 
   def join
     @group = Group.find(params[:id])
-    current_user.groups << @group
+    @membership = Membership.new(group: @group, user: current_user)
+    @membership.save
     redirect_to @group, notice: 'You have joined the group.'
   end
+  
+  private
+  def group_params
+    params.require(:group).permit(:name, :description)
+  end======
+
 end

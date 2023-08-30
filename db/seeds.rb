@@ -30,15 +30,17 @@ User.create!(
   picture: "Giovane.png",
   age: 24
 )
+
 User.create!(
   first_name: "Ozge",
   last_name: "Kilic",
   email: "ozgeklc096@gmail.com",
   password: "123456",
   address: Faker::Address.street_address,
-  picture: "ozge.jpg",
-  age: 24
+  picture: "" ,
+  age: 27
 )
+
 User.create!(
   first_name: "Ulrich",
   last_name: "Thofehrn",

@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'profile/subjects', to: 'pages#subjects', as: 'profilesubjects'
 
-  resources :interested_subjects, only: %i[new create]
 
-  resources :groups, except: %i[index] do
+  resources :groups do
+  resources :interested_subjects, only: %i[new create]
     resources :sessions, except: %i[index]
   end
   resources :groups do
