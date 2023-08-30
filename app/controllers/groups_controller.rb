@@ -21,7 +21,6 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-
   def edit
     @group = Group.find(params[:id])
     if @group.user != current_user
@@ -45,9 +44,10 @@ class GroupsController < ApplicationController
     @membership.save
     redirect_to @group, notice: 'You have joined the group.'
   end
-
+  
   private
   def group_params
     params.require(:group).permit(:name, :description)
-  end
+  end======
+
 end
