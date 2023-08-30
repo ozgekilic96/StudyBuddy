@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @page_title = "Dashboard"
   end
 
   def profile

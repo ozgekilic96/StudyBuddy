@@ -8,6 +8,7 @@ class InterestedSubjectsController < ApplicationController
     subject_ids = params[:interested_subject][:subject_id]
     current_user.subject_ids = subject_ids
     current_user.save!
+    redirect_to dashboard_path
   end
 
   private
