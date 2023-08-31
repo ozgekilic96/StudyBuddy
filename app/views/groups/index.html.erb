@@ -1,7 +1,8 @@
-<% @groups.each do |group| %>
-  <p><%= group.name %></p>
-<% end %>
-
-<% @my_groups.each do |group| %>
-  <%= group.name %>
-<% end %>
+<%= render "shared/navbar" %>
+<div class="cards">
+  <% @my_groups.each do |group| %>
+      <%= image_tag group.group_picture %>
+        <%= group.name %>
+        <%= group.description %>
+  <% end %>
+</div>
