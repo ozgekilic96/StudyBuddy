@@ -5,15 +5,16 @@
   </div>
   <div>
     <h3 class="m-3"><%= @user.first_name %></h3>
-    <h4><%= @user.address %></h4>
+    <h3><%= @user.address %></h3>
   </div>
 </div>
-<h2 class="my-2 mx-2">Subjects</h2>
+<h2 class="m-4 mt-5">Subjects</h2>
 <div class="card bg-dark"></div>
 <% @subjects.each do |subject| %>
   <div class="card subjects-card text-center">
     <p><%= subject.name %></p>
   </div>
 <% end %>
-<%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary m-3" %>
+<div class="card bg-dark"></div>
+<%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary m-3 edit-button" %>
 <%= render "shared/navbar_bottom" %>
