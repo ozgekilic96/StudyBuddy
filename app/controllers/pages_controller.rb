@@ -12,12 +12,13 @@ class PagesController < ApplicationController
     @my_subjects = current_user.subjects.pluck(:id)
     @my_groups = Group.where(subject_id: @my_subjects).pluck(:subject_id)
     @my_sessions = Session.where(id: @my_groups)
-    
-    @sessions = Session.all
-    @markers = @sessions.geocoded.map do |session|
+
+    @markers = @my_sessions.geocoded.map do |session|
       {
         lat: session.latitude,
-        lng: session.longitude
+        lng: session.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { session: session }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
