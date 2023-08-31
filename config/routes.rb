@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
-  root to: "pages#home"
+  root to: "pages#dashboard"
 
   get 'profile', to: 'pages#profile'
   get 'profile/edit', to: 'pages#edit'
@@ -16,5 +16,4 @@ Rails.application.routes.draw do
     end
     resources :sessions, except: %i[index]
   end
-
 end

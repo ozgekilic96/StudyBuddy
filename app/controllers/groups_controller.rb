@@ -1,13 +1,6 @@
 class GroupsController < ApplicationController
   def index
     @user = current_user
-    if params[:search]
-      search_term = params[:search].downcase
-      @groups = Group.where('LOWER(name) LIKE ? OR LOWER(description) LIKE ?', "%#{search_term}%", "%#{search_term}%")
-                    .order('name ASC')
-    else
-      @groups = Group.all
-    end
     @group_ids = @user.memberships.pluck(:group_id)
     @my_groups = Group.where(id: @group_ids)
   end
