@@ -1,8 +1,22 @@
 .navbar {
   background-color: #008AD3;
+  padding: 10px 0;
+}
+
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
 }
 
 .page-title{
+  margin: 0;
   font-size: 23px;
 }
 
