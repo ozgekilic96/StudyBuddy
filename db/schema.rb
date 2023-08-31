@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_31_121128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,7 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
     t.bigint "group_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.string "description"
     t.index ["group_id"], name: "index_sessions_on_group_id"
+    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -97,4 +100,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_194835) do
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
   add_foreign_key "sessions", "groups"
+  add_foreign_key "sessions", "users"
 end
