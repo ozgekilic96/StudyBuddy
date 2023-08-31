@@ -9,6 +9,10 @@ class PagesController < ApplicationController
 
   def dashboard
     @page_title = "Dashboard"
+    @my_subjects = current_user.subjects.pluck(:id)
+    @my_groups = Group.where(subject_id: @my_subjects).pluck(:subject_id)
+    @my_sessions = Session.where(id: @my_groups)
+    
     @sessions = Session.all
     @markers = @sessions.geocoded.map do |session|
       {
