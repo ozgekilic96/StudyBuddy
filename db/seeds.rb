@@ -574,7 +574,6 @@ Attendance.create!(
   user: ulrich,
   session_id: 1
 )
-
 Attendance.create!(
   user: ozge,
   session_id: 2
