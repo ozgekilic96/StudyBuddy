@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     if @session.save
-      redirect_to session_path
+      redirect_to session_path(@session)
     else
       render :new
     end
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def update
-    @session = current_user.session.find(params[:id])
+    @session = current_user.sessions.find(params[:id])
 
     if @session.update(session_params)
       redirect_to @session, notice: 'Session was successfully updated'
