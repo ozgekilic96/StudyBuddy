@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #008AD3;
+}
+
+.page-title{
+  font-size: 23px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.search-input {
+  padding: 10px 30px 10px 10px; /* Adicione espaço à direita para o ícone */
+  border: 1px solid #00456b;
+  background-color: #1C85BF;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: #ffffffac;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px; /* Ajuste a posição conforme necessário */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.search-button i {
+  color: #b5d7ea; /* Cor do ícone */
+  font-size: 18px; /* Tamanho do ícone */
+}

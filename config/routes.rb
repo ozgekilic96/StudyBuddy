@@ -11,11 +11,10 @@ Rails.application.routes.draw do
   resources :interested_subjects, only: %i[new create]
 
   resources :groups do
-    resources :sessions, except: %i[index]
-  end
-  resources :groups do
     member do
       post 'join'
     end
+    resources :sessions, except: %i[index]
   end
+
 end
