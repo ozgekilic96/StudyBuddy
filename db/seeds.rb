@@ -112,7 +112,6 @@ Subject.create!(
   name: "Philosophy"
 )
 
-
 Group.create!(
   name: "Atomic and chemical physics",
   description: "We will break the atom into its particles together",
