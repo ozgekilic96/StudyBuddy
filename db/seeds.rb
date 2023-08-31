@@ -27,7 +27,7 @@ ozge = User.create!(
   age: 27
 )
 
-User.create!(
+ulrich = User.create!(
   first_name: "Ulrich",
   last_name: "Thofehrn",
   email: "welfito@icloud.com",
@@ -543,30 +543,34 @@ Group.create!(
   )
 end
 
+Session.create!(
+  name: "Microbiolgy - Viruses :)",
+  description: "I'm looking for 3 people to study Viruses",
+  time: "09.07.2023 15:20",
+  group: microbiology_group,
+  user: ozge,
+  address: "Pflüger Strasse 3, Berlin"
+)
 
-    Session.create!(
-      name: "Microbiolgy - Viruses :)",
-      description: "I'm looking for 3 people to study Viruses",
-      time: "09.07.2023 15:20",
-      group: microbiology_group,
-      user: ozge,
-      address: "Pflüger Strasse, Berlin"
-    )
+Session.create!(
+  name: "Lets practice our Slovenian ! :)",
+  description: "Anybody who wants to practice Slovenian welcome to join me !:)",
+  time: "09.07.2023 16:20",
+  group: slovenian_group,
+  user: ozge,
+  address: "Rudi-Dutschke-Straße 26, Berlin"
+)
 
-    Session.create!(
-      name: "Lets practice our Slovenian ! :)",
-      description: "Anybody who wants to practice Slovenian welcome to join me !:)",
-      time: "09.07.2023 16:20",
-      group: slovenian_group,
-      user: ozge,
-      address: "Rigaer Strasse"
-    )
+Session.create!(
+  name: "Ecology- Carbon Cycling & Sequestration.",
+  description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
+  time: "09.07.2023 19:20",
+  group: ecology_group,
+  user: ozge,
+  address: "Rigaer Strasse 5, Berlin"
+)
 
-    Session.create!(
-      name: "Ecology- Carbon Cycling & Sequestration.",
-      description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
-      time: "09.07.2023 19:20",
-      group: ecology_group,
-      user: ozge,
-      address: "Rigaer Strasse"
-    )
+Attendance.create!(
+  user: ulrich,
+  session: 1
+)

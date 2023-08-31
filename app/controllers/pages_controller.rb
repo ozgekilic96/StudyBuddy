@@ -9,6 +9,13 @@ class PagesController < ApplicationController
 
   def dashboard
     @page_title = "Dashboard"
+    @sessions = Session.all
+    @markers = @sessions.geocoded.map do |session|
+      {
+        lat: session.latitude,
+        lng: session.longitude
+      }
+    end
   end
 
   def profile
