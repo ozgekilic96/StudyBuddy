@@ -36,7 +36,7 @@ User.create!(
   age: 24
 )
 
-120.times do
+15.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email_name = "#{first_name.downcase}.#{last_name.downcase}"
@@ -54,7 +54,7 @@ end
 Subject.create!(
   name: "Physics"
 )
-Subject.create!(
+biology = Subject.create!(
   name: "Biology"
 )
 Subject.create!(
@@ -118,230 +118,230 @@ Group.create!(
   description: "We will break the atom into its particles together",
   group_picture: "atomic.jpg",
   subject_id: 1,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 
 Group.create!(
   name: "Optics",
   group_picture: "Optics.jpg",
   subject_id: "1",
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Quantum mechanics",
   description: "We are waitig for all quantum lovers",
   group_picture: "Quantum.jpg",
   subject_id: "1",
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 microbiology_group = Group.create!(
   name: "Microbiology",
   group_picture: "microbiology.jpg",
   subject_id: 2,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 ecology_group = Group.create!(
   name: "Ecology",
   description: "",
   group_picture: "ecology.jpg",
   subject_id: 2,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 genetics_group = Group.create!(
   name: "Genetics",
   description: "Join us for bright future",
-  group_picture: "genetics.jpg",
+  group_picture: "genetic.jpg",
   subject_id: 2,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Clinical psychology",
   description: "",
   group_picture: "clinic.jpg",
   subject_id: 3,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Abnormal psychology",
   description: "",
   group_picture: "abnormal.jpg",
   subject_id: 3,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Schizophrenia",
   description: "",
   group_picture: "schizophrenia.jpg",
   subject_id: 3,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Statistics",
   description: "",
   group_picture: "statisticsçjpg",
   subject_id: 4,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Algebra",
   description: "",
   group_picture: "algo.jpg",
   subject_id: 4,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Calculus",
   description: "",
   group_picture: "calculus.webp",
   subject_id: 4,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Anatomy and Physiology",
   description: "",
   group_picture: "anatomy.webp",
   subject_id: 5,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Sports medicine",
   description: "",
   group_picture: "medicine.jpg",
   subject_id: 5,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Sports Nutrition",
   description: "",
   group_picture: "Nutrition.jpg",
   subject_id: 5,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Plant Pathology",
   description: "",
   group_picture: "pathology.png",
   subject_id: 6,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Crop Science",
   description: "",
   group_picture: "crop.jpg",
   subject_id: 6,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Horticulture",
   description: "",
   group_picture: "horti.jpg",
   subject_id: 6,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Cultural and Historical Geography",
   description: "",
   group_picture: "cultural.jpg",
   subject_id: 7,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Geography of Health and Disease",
   description: "",
   group_picture: "hav.png",
   subject_id: 7,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Cartography",
   description: "",
   group_picture: "cartography.jpg",
   subject_id: 7,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Organic Chemistry",
   description: "",
   group_picture: "organic.jpg",
   subject_id: 8,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Nanotechnology",
   description: "",
   group_picture: "nano.jpg",
   subject_id: 8,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Biochemistry",
   description: "",
   group_picture: "biochemistry.jpg",
   subject_id: 8,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Microeconomics",
   description: "",
   group_picture: "micro.webp",
   subject_id: 9,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Macroeconomics",
   description: "",
   group_picture: "macroeconomics.jpg",
   subject_id: 9,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Industrial Organization",
   description: "",
   group_picture: "IndustrialOrganization.jpeg",
   subject_id: 9,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Industrial Engineering",
   description: "",
   group_picture: "industrial.jpg",
   subject_id: 10,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Mechatronics Engineering",
   description: "",
   group_picture: "mecha.jpg",
   subject_id: 10,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Civil Engineering",
   description: "",
   group_picture: "Civil-engineers.jpg",
   subject_id: 10,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Music",
   description: "",
   group_picture: "music.jpg",
   subject_id: 11,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Art History",
   description: "",
   group_picture: "art.jpg",
   subject_id: 11,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Digital Arts",
   description: "",
   group_picture: "digital.jpg",
   subject_id: 11,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 
 Group.create!(
@@ -349,189 +349,189 @@ Group.create!(
   description: "",
   group_picture: "urban.jpg",
   subject_id: 12,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Interior Architecture and Design",
   description: "",
   group_picture: "interior.jpg",
   subject_id: 12,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Architectural History",
   description: "",
   group_picture: "Babel.jpg",
   subject_id: 12,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Motivation and Engagement",
   description: "",
   group_picture: "motivation.jpg",
   subject_id: 13,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Critical Pedagogy",
   description: "",
   group_picture: "critical.jpg",
   subject_id: 13,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Reflective Practice",
   description: "",
   group_picture: "reflective.jpg",
   subject_id: 13,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Human Resource Management",
   description: "",
   group_picture: "hr.webp",
   subject_id: 14,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Marketing",
   description: "",
   group_picture: "marketing.webp",
   subject_id: 14,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Management Principles",
   description: "",
   group_picture: "principles.jpg",
   subject_id: 14,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Criminal Law",
   description: "",
   group_picture: "criminallaw.jpg",
   subject_id: 15,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Civil Law",
   description: "",
   group_picture: "civillaw.webp",
   subject_id: 15,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Administrative Law",
   description: "",
   group_picture: "admin.jpg",
   subject_id: 15,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 slovenian_group = Group.create!(
   name: "Slovenian",
   description: "",
   group_picture: "slovenian.jpg",
   subject_id: 16,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Ukranian",
   description: "",
   group_picture: "Ukrainian.jpg",
   subject_id: 16,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Swedish",
   description: "",
   group_picture: "swedish.jpg.webp",
   subject_id: 16,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Literature",
   description: "",
   group_picture: "liteture.webp",
   subject_id: 17,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "History",
   description: "",
   group_picture: "history.jpg",
   subject_id: 17,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Archaeology",
   description: "",
   group_picture: "archeology.jpg",
   subject_id: 17,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Cybersecurity",
   description: "",
   group_picture: "cybersecurity.jpg",
   subject_id: 18,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Software Engineering",
   description: "",
   group_picture: "sofware.jpg",
   subject_id: 18,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Artificial Intelligence",
   description: "",
   group_picture: "artificial.jpeg",
   subject_id: 18,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Human Rights Studies",
   description: "human_rights.jpg",
   group_picture: "",
   subject_id: 19,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Sociology",
   description: "",
   group_picture: "socilogie.jpg",
   subject_id: 19,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Anthropology",
   description: "Anthropology.jpg",
   group_picture: "",
   subject_id: 19,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Epistemology",
   description: "",
   group_picture: "Epistemology.webp",
   subject_id: 20,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Metaphysics",
   description: "",
   group_picture: "meta.webp",
   subject_id: 20,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 Group.create!(
   name: "Philosophy of Science",
   description: "Welcome to most supportive group.",
   group_picture: "philo.jpeg",
   subject_id: 20,
-  user_id: rand(1..120)
+  user_id: rand(1..15)
 )
 
 100.times do
@@ -542,8 +542,6 @@ Group.create!(
     updated_at: Time.now
   )
 end
-
-
     Session.create!(
       name: "Microbiolgy - Viruses :)",
       description: "I'm looking for 3 people to study Viruses",
@@ -552,7 +550,6 @@ end
       user: ozge,
       address: "Pflüger Strasse, Berlin"
     )
-
     Session.create!(
       name: "Lets practice our Slovenian ! :)",
       description: "Anybody who wants to practice Slovenian welcome to join me !:)",
@@ -561,7 +558,6 @@ end
       user: ozge,
       address: "Rigaer Strasse"
     )
-
     Session.create!(
       name: "Ecology- Carbon Cycling & Sequestration.",
       description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
