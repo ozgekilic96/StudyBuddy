@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    if current_user
+      redirect_to dashboard_path
+    end
   end
 
   def dashboard
@@ -9,7 +12,9 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @page_title = "Profile"
     @user = current_user
+    @subjects = current_user.subjects
   end
 
   def subjects
