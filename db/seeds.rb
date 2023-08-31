@@ -566,7 +566,6 @@ end
       user: ozge,
       address: "Rigaer Strasse"
     )
-=======
 
 Session.create!(
   name: "Microbiolgy - Viruses :)",
