@@ -1,4 +1,18 @@
-<div class="container text-center">
-  <h1>Your Profile</h1>
-  <h3>Hello, <%= @user.first_name %></h3>
+<%= render "shared/navbar" %>
+<div class="container d-flex text-center mt-4">
+  <div class="user-profile profile-page mx-3">
+    <%= image_tag current_user.picture %>
+  </div>
+  <div>
+    <h3 class="m-3"><%= @user.first_name %></h3>
+    <h4><%= @user.address %></h4>
+  </div>
 </div>
+<h2 class="my-2 mx-2">Subjects</h2>
+<div class="card bg-dark"></div>
+<% @subjects.each do |subject| %>
+  <div class="card subjects-card text-center">
+    <p><%= subject.name %></p>
+  </div>
+<% end %>
+<%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary" %>
