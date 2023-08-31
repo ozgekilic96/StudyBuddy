@@ -534,7 +534,7 @@ Group.create!(
   user_id: rand(1..120)
 )
 
-50.times do
+100.times do
   Membership.create!(
     group_id: Group.pluck(:id).sample,
     user_id: User.pluck(:id).sample,
@@ -570,4 +570,3 @@ end
       user: ozge,
       address: "Rigaer Strasse"
     )
-
