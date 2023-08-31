@@ -1,8 +1,9 @@
 
+<%= @group.name %>
+    <%= image_tag @group.group_picture %>
 
-<% unless @group.users.include?(current_user) %>
   <%= link_to 'Join Group', join_group_path(@group), method: :post %>
-<% end %>
+
 <% if @group.user == current_user %>
   <%= link_to 'Edit Group', edit_group_path(@group) %>
 <% end %>
