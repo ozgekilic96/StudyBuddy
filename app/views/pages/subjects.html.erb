@@ -5,7 +5,7 @@
   <%= simple_form_for(@interested_subject) do |f| %>
     <%= f.association :subject, collection: @subjects,  as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector", multiple: true, checked: current_user.subject_ids }, item_wrapper_class: 'tag-item text-center' %>
     <div class="text-center">
-      <%= f.submit "Add this subjects", class: "btn btn-primary rounded" %>
+      <%= f.submit "Add these subjects", class: "btn btn-primary rounded" %>
     </div>
   <% end %>
   <div class="text-center">
