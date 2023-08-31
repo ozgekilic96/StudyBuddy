@@ -7,6 +7,35 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 Faker::Config.locale = 'de'
+User.create!(
+  first_name: "Giovane",
+  last_name: "Nery",
+  email: "giovane.nery@hotmail.com",
+  password: "123456",
+  address: "Berlin",
+  picture: "Giovane.png",
+  age: 24
+)
+
+ozge = User.create!(
+  first_name: "Ozge",
+  last_name: "Kilic",
+  email: "ozgeklc096@gmail.com",
+  password: "123456",
+  address: "Berlin",
+  picture: "",
+  age: 27
+)
+
+User.create!(
+  first_name: "Ulrich",
+  last_name: "Thofehrn",
+  email: "welfito@icloud.com",
+  password: "123456",
+  address: "Berlin",
+  age: 24
+)
+
 120.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -17,38 +46,10 @@ Faker::Config.locale = 'de'
     last_name: last_name,
     email: "#{email_name}@example.com",
     password: "123456",
-    address: Faker::Address.street_address,
+    address: "Berlin",
     age: rand(16..35)
   )
 end
-User.create!(
-  first_name: "Giovane",
-  last_name: "Nery",
-  email: "giovane.nery@hotmail.com",
-  password: "123456",
-  address: Faker::Address.street_address,
-  picture: "Giovane.png",
-  age: 24
-)
-
-User.create!(
-  first_name: "Ozge",
-  last_name: "Kilic",
-  email: "ozgeklc096@gmail.com",
-  password: "123456",
-  address: Faker::Address.street_address,
-  picture: "",
-  age: 27
-)
-
-User.create!(
-  first_name: "Ulrich",
-  last_name: "Thofehrn",
-  email: "welfito@icloud.com",
-  password: "123456",
-  address: Faker::Address.street_address,
-  age: 24
-)
 
 Subject.create!(
   name: "Physics"
@@ -133,20 +134,20 @@ Group.create!(
   subject_id: "1",
   user_id: rand(1..120)
 )
-Group.create!(
+microbiology_group = Group.create!(
   name: "Microbiology",
   group_picture: "microbiology.jpg",
   subject_id: 2,
   user_id: rand(1..120)
 )
-Group.create!(
+ecology_group = Group.create!(
   name: "Ecology",
   description: "",
   group_picture: "ecology.jpg",
   subject_id: 2,
   user_id: rand(1..120)
 )
-Group.create!(
+genetics_group = Group.create!(
   name: "Genetics",
   description: "Join us for bright future",
   group_picture: "genetics.jpg",
@@ -427,7 +428,7 @@ Group.create!(
   subject_id: 15,
   user_id: rand(1..120)
 )
-Group.create!(
+slovenian_group = Group.create!(
   name: "Slovenian",
   description: "",
   group_picture: "slovenian.jpg",
@@ -532,9 +533,7 @@ Group.create!(
   subject_id: 20,
   user_id: rand(1..120)
 )
-# seed.rb
 
-# Create 5 membership records
 50.times do
   Membership.create!(
     group_id: Group.pluck(:id).sample,
@@ -543,3 +542,32 @@ Group.create!(
     updated_at: Time.now
   )
 end
+
+
+    Session.create!(
+      name: "Microbiolgy - Viruses :)",
+      description: "I'm looking for 3 people to study Viruses",
+      time: "09.07.2023 15:20",
+      group: microbiology_group,
+      user: ozge,
+      address: "Pflüger Strasse, Berlin"
+    )
+
+    Session.create!(
+      name: "Lets practice our Slovenian ! :)",
+      description: "Anybody who wants to practice Slovenian welcome to join me !:)",
+      time: "09.07.2023 16:20",
+      group: slovenian_group,
+      user: ozge,
+      address: "Rigaer Strasse"
+    )
+
+    Session.create!(
+      name: "Ecology- Carbon Cycling & Sequestration.",
+      description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
+      time: "09.07.2023 19:20",
+      group: ecology_group,
+      user: ozge,
+      address: "Rigaer Strasse"
+    )
+
