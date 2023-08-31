@@ -4,11 +4,17 @@
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 </div>
-
+ <h2>Upcoming Sessions</h2>
 <% @my_sessions.each do |session| %>
-<%= session.name %>
-<%= image_tag session.group.group_picture %>
+  <div class="session-card">
+    <%# <%= image_tag session.group.group_picture, class: "session-image" %>
+    <div class="session-details">
+      <div class="session-name"><%= session.name %></div>
+      <p><%= session.time %></p>
+      <p><%= session.description %></p>
+    </div>
+  </div>
 <% end %>
-
 <%= render "shared/navbar_bottom" %>

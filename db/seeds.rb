@@ -146,7 +146,7 @@ ecology_group = Group.create!(
   subject_id: 2,
   user_id: rand(1..15)
 )
-genetics_group = Group.create!(
+Group.create!(
   name: "Genetics",
   description: "Join us for bright future",
   group_picture: "genetic.jpg",
@@ -541,30 +541,6 @@ Group.create!(
     updated_at: Time.now
   )
 end
-    Session.create!(
-      name: "Microbiolgy - Viruses :)",
-      description: "I'm looking for 3 people to study Viruses",
-      time: "09.07.2023 15:20",
-      group: microbiology_group,
-      user: ozge,
-      address: "Pflüger Strasse, Berlin"
-    )
-    Session.create!(
-      name: "Lets practice our Slovenian ! :)",
-      description: "Anybody who wants to practice Slovenian welcome to join me !:)",
-      time: "09.07.2023 16:20",
-      group: slovenian_group,
-      user: ozge,
-      address: "Rigaer Strasse"
-    )
-    Session.create!(
-      name: "Ecology- Carbon Cycling & Sequestration.",
-      description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
-      time: "09.07.2023 19:20",
-      group: ecology_group,
-      user: ozge,
-      address: "Rigaer Strasse"
-    )
 
 Session.create!(
   name: "Microbiolgy - Viruses :)",
@@ -595,5 +571,17 @@ Session.create!(
 
 Attendance.create!(
   user: ulrich,
+  session_id: 1
+)
+Attendance.create!(
+  user: ozge,
+  session_id: 2
+)
+Attendance.create!(
+  user: ozge,
+  session_id: 3
+)
+Attendance.create!(
+  user: ozge,
   session_id: 1
 )

@@ -1,9 +1,13 @@
 <%= render "shared/navbar" %>
 <div class="cards">
-  <% @my_groups.each do |group| %>
-      <%= image_tag group.group_picture %>
-        <%= group.name %>
-        <%= group.description %>
-  <% end %>
-</div>
+<h2>My groups</h2>
+ <% @my_groups.each do |group| %>
+  <div class="group-card">
+    <%= image_tag group.group_picture, class: "group-image" %>
+    <div class="group-details">
+      <div class="group-name"><%= group.name %></div>
+    </div>
+  </div>
+<% end %>
+
 <%= render "shared/navbar_bottom" %>
