@@ -1,12 +1,16 @@
 <div class="navbar">
   <div class="d-flex justify-content-between container-fluid">
     <div class="logo">
-      <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1693480555/studylogo2_i4wwsv.png" />
+      <%= link_to dashboard_path do %>
+        <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1693480555/studylogo2_i4wwsv.png" />
+      <% end %>
     </div>
     <h1 class="page-title"><%= @page_title %></h1>
     <% if current_user.picture? %>
       <div class="user-profile">
-        <%= image_tag current_user.picture %>
+        <%= link_to profile_path do %>
+          <%= image_tag current_user.picture %>
+        <% end %>
       </div>
     <% else %>
       <div class="user-profile">

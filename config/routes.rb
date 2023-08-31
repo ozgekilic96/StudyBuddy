@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     member do
       post 'join'
     end
-    resources :sessions, except: %i[index]
+    resources :sessions do
+      member do
+        post 'join'
+      end
+    end
   end
 end
