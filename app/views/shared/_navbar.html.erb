@@ -2,14 +2,14 @@
   <div class="d-flex justify-content-between container-fluid">
     <div class="logo">
       <%= link_to dashboard_path do %>
-        <%=image_tag "Katman.png"  %>
+        <%= image_tag "Katman.png"  %>
       <% end %>
     </div>
     <h1 class="page-title"><%= @page_title %></h1>
     <div class="nav-item dropdown">
       <a href="#" class="user-profile" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.picture? %>
-          <%= image_tag current_user.picture %>
+          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= current_user.picture %>" />
         <% else %>
           <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693490930/DefaultAvatar_zwdogj.jpg" %>
         <% end %>
