@@ -1,19 +1,13 @@
 <%= render "shared/navbar" %>
-<div class="container d-flex text-center mt-4">
-  <div class="user-profile profile-page mx-3">
-    
-  </div>
-  <div>
-    <h3 class="m-3"><%= @user.first_name %></h3>
-    <h3>🌎 <%= @user.address %></h3>
-  </div>
-</div>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-danger" %>
-<h2 class="m-4 mt-5">Subjects</h2>
-<div class="card bg-dark"></div>
-<% @subjects.each do |subject| %>
-  <div class="card subjects-card text-center">
-    <p class="mt-2"><%= subject.name %></p>
+<div class="background-image">
+  <div class="container d-flex text-center mt-4">
+    <div class="user-profile profile-page mx-3">
+      <%= image_tag current_user.picture %>
+    </div>
+    <div>
+      <h3 class="m-3"><%= @user.first_name %></h3>
+      <h3>🌎 <%= @user.address %></h3>
+    </div>
   </div>
   <h2 class="m-4 mt-5">Subjects</h2>
   <div class="card bg-dark"></div>
@@ -24,5 +18,5 @@
     <div class="card bg-dark"></div>
   <% end %>
   <%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary m-3 edit-button" %>
- </div>
+</div>
 <%= render "shared/navbar_bottom" %>
