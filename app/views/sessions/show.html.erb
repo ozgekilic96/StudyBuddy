@@ -1,14 +1,8 @@
-<h1><%= @session.name %></h1>
+<%= @session.name %>
+  <%= image_tag session.group.group_picture %>
 
-<p><strong>Description:</strong> <%= @session.description %></p>
-<p><strong>Address:</strong> <%= @session.address %></p>
+   <%= link_to 'Join Session', join_session_path(@session), method: :post %>
 
-<% if current_user == @session.user %>
-  <%= link_to "Edit", edit_session_path(@session) %>
+<% if @session.user == current_user %>
+  <%= link_to 'Edit Session', edit_session_path(@session) %>
 <% end %>
-
-<% if current_user != @session.user && current_user.memberships.find_by(session_id: @session.id).nil? %>
-  <%= link_to "Join Session", join_session_path(@session), method: :post %>
-<% end %>
-
-<%= link_to "Back to Sessions", sessions_path %>
