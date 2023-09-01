@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   def index
+    @page_title = "Groups"
     @user = current_user
     @group_ids = @user.memberships.pluck(:group_id)
     @my_groups = Group.where(id: @group_ids)
@@ -45,7 +46,6 @@ class GroupsController < ApplicationController
     @membership.save
     redirect_to @group, notice: 'You have joined the group.'
   end
-
 
   private
 
