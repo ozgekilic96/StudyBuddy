@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resources :interested_subjects, only: %i[new create]
 
-  
 
   resources :groups do
     member do

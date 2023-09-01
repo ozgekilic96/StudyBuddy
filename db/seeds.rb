@@ -21,7 +21,7 @@ ozge = User.create!(
   first_name: "Ozge",
   last_name: "Kilic",
   email: "ozgeklc096@gmail.com",
-  password: "123456",
+  password: "12345678",
   address: "Berlin",
   picture: "ozge.jpeg",
   age: 27
