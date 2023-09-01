@@ -8,13 +8,15 @@
 </div>
  <h2>Upcoming Sessions</h2>
 <% @my_sessions.each do |session| %>
-  <div class="session-card">
-    <%# <%= image_tag session.group.group_picture, class: "session-image" %>
-    <div class="session-details">
-      <div class="session-name"><%= session.name %></div>
-      <p><%= session.time %></p>
-      <p><%= session.description %></p>
+  <%= link_to session_path(session) do %>
+    <div class="session-card">
+      <%# <%= image_tag session.group.group_picture, class: "session-image" %>
+      <div class="session-details">
+        <div class="session-name"><%= session.name %></div>
+        <p><%= session.time %></p>
+        <p><%= session.description %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 <%= render "shared/navbar_bottom" %>

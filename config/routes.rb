@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :interested_subjects, only: %i[new create]
 
-  
+  resources :sessions, only: %i[show index]
 
   resources :groups do
     member do

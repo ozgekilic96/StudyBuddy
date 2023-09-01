@@ -1,0 +1,8 @@
+<%= render "shared/navbar" %>
+<%= @session.name %>
+  <%= image_tag session.group.group_picture %>
+   <%= link_to 'Join Session', join_session_path(@session), method: :post %>
+<% if @session.user == current_user %>
+  <%= link_to 'Edit Session', edit_session_path(@session) %>
+<% end %>
+<%= render "shared/navbar_bottom" %>
