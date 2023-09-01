@@ -23,7 +23,7 @@ ozge = User.create!(
   email: "ozgeklc096@gmail.com",
   password: "123456",
   address: "Berlin",
-  picture: "",
+  picture: "ozge.jpeg",
   age: 27
 )
 
@@ -434,7 +434,7 @@ slovenian_group = Group.create!(
   subject_id: 16,
   user_id: rand(1..15)
 )
-Group.create!(
+ukranian_group = Group.create!(
   name: "Ukranian",
   description: "",
   group_picture: "Ukrainian_juyvv3",
@@ -543,7 +543,15 @@ Group.create!(
 end
 
 Session.create!(
-  name: "Microbiolgy - Viruses :)",
+  name: "Ecology- Carbon Cycling & Sequestration.",
+  description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
+  time: "09.07.2023 19:20",
+  group: ecology_group,
+  user: ozge,
+  address: "Rigaer Strasse 5, Berlin"
+)
+Session.create!(
+  name: "Microbiology - Viruses :)",
   description: "I'm looking for 3 people to study Viruses",
   time: "09.07.2023 15:20",
   group: microbiology_group,
@@ -554,19 +562,19 @@ Session.create!(
 Session.create!(
   name: "Lets practice our Slovenian ! :)",
   description: "Anybody who wants to practice Slovenian welcome to join me !:)",
-  time: "09.07.2023 16:20",
+  time: "10.07.2023 16:20",
   group: slovenian_group,
   user: ozge,
   address: "Rudi-Dutschke-Straße 26, Berlin"
 )
 
 Session.create!(
-  name: "Ecology- Carbon Cycling & Sequestration.",
-  description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
-  time: "09.07.2023 19:20",
-  group: ecology_group,
+  name: "Learn Ukrainian & Language exchange:)",
+  description: " I'm new in Berlin and I want to learn German. If you want to learn Ukrainian , lets exchange the languages!:)",
+  time: "09.07.2023 13:20",
+  group: ukranian_group,
   user: ozge,
-  address: "Rigaer Strasse 5, Berlin"
+  address: "karl marx allee 31, Berlin"
 )
 
 Attendance.create!(
@@ -584,4 +592,16 @@ Attendance.create!(
 Attendance.create!(
   user: ozge,
   session_id: 1
+)
+Attendance.create!(
+  user: ozge,
+  session_id: 4
+)
+Attendance.create!(
+  user_id: 1,
+  session_id: 4
+)
+Attendance.create!(
+  user_id: 1,
+  session_id: 2
 )

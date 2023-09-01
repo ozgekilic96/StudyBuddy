@@ -1,7 +1,7 @@
 .session-card {
   display: flex;
   flex-direction: column; /* Change the flex direction to column */
-  background-color: #45ffd7ea;
+  background-color: #4e6cf0ef;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
@@ -9,11 +9,11 @@
   font-family: 'Your Chosen Font', sans-serif;
 
 
-  transition: transform 0.2s ease-in-out;
+//   transition: transform 0.2s ease-in-out;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+//   &:hover {
+//     transform: scale(1.05);
+//   }
 }
 h2 {
   font-family: 'Your Chosen Font', sans-serif;
@@ -30,17 +30,19 @@ h2 {
   padding: 20px;
   font-size: 12px;
   line-height: 1.4;
-  color: #333;
+
 
   .session-name {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #fffefe;
   }
 
   p {
     font-size: 0.9rem;
     margin-bottom: 8px;
+    color: #ffffffd3;
   }
 
   /* Add more styling for session details as needed */
@@ -50,7 +52,7 @@ h2 {
 .group-card {
   display: flex;
   flex-direction: column;
-  background-color: #45ffd7ea;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
