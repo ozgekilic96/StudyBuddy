@@ -13,7 +13,7 @@ User.create!(
   email: "giovane.nery@hotmail.com",
   password: "123456",
   address: "Berlin",
-  picture: "Giovane.png",
+  picture: "Giovane_hclkxc",
   age: 24
 )
 
@@ -23,7 +23,7 @@ ozge = User.create!(
   email: "ozgeklc096@gmail.com",
   password: "12345678",
   address: "Berlin",
-  picture: "ozge.jpeg",
+  picture: "ozge_vvmcfy",
   age: 27
 )
 
@@ -33,6 +33,7 @@ ulrich = User.create!(
   email: "welfito@icloud.com",
   password: "123456",
   address: "Berlin",
+  picture: "ulrich_wb7zuy",
   age: 24
 )
 
