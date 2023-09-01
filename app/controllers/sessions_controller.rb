@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def index
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
-    @my_sessions = Sessions.where(id: @session_ids)
+    @my_sessions = Session.where(id: @session_ids)
   end
 
   def new
