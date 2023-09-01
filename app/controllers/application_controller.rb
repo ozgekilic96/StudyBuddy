@@ -8,10 +8,4 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name address phone_number age picture])
   end
-
-  private
-
-  def after_sign_up_path_for(resource_or_scope)
-    profilesubjects_path
-  end
 end
