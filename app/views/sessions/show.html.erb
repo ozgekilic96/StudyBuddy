@@ -1,8 +1,15 @@
 <%= render "shared/navbar" %>
-<%= @session.name %>
-<%= image_tag session.group.group_picture %>
-<%= link_to 'Join Session', join_session_path(@session), method: :post %>
-<% if @session.user == current_user %>
-  <%= link_to 'Edit Session', edit_session_path(@session) %>
-<% end %>
+<div class="group-card">
+    <h2><%= @session.name %></h2>
+    <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
+  <div class="session-card">
+    <div class="session-name text-white p-3">
+
+      <p>Adress: <%= @session.address %> </p>
+      <p >Date/Time  <%= @session.address %> </p>
+    </div>
+  </div>
+</div>
+<%= link_to 'Send request', join_group_session_path(@session), method: :post, class: "btn btn-primary text-center mx-5" %>
+
 <%= render "shared/navbar_bottom" %>

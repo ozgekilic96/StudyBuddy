@@ -8,7 +8,7 @@
 </div>
  <h2>Upcoming Sessions</h2>
 <% @my_sessions.each do |session| %>
-  <%= link_to session_path(session) do %>
+  <%= link_to group_session_path(session.group, session) do %>
     <div class="session-card">
       <%# <%= image_tag session.group.group_picture, class: "session-image" %>
       <div class="session-details">
