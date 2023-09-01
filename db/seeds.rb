@@ -570,3 +570,8 @@ end
       user: ozge,
       address: "Rigaer Strasse"
     )
+
+    Attendance.create!(
+      user: ulrich,
+      session: 1
+    )

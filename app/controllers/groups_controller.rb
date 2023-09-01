@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   def edit
     @group = Group.find(params[:id])
     if @group.user != current_user
-      redirect_to @group, alert: 'You do not have permission to edit this group.'
+      redirect_to @group, alert: 'You do not have permission to edit this group'
     end
   end
 
@@ -45,7 +45,6 @@ class GroupsController < ApplicationController
     @membership.save
     redirect_to @group, notice: 'You have joined the group.'
   end
-
 
   private
 
