@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 <div class="container d-flex text-center mt-4">
   <div class="user-profile profile-page mx-3">
-    <%= image_tag current_user.picture %>
+    
   </div>
   <div>
     <h3 class="m-3"><%= @user.first_name %></h3>
@@ -15,7 +15,14 @@
   <div class="card subjects-card text-center">
     <p class="mt-2"><%= subject.name %></p>
   </div>
+  <h2 class="m-4 mt-5">Subjects</h2>
   <div class="card bg-dark"></div>
-<% end %>
-<%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary m-3 edit-button" %>
+  <% @subjects.each do |subject| %>
+    <div class="card subjects-card text-center">
+      <p class="mt-2"><%= subject.name %></p>
+    </div>
+    <div class="card bg-dark"></div>
+  <% end %>
+  <%= link_to "Edit your subjects", profilesubjects_path, class:"btn btn-primary m-3 edit-button" %>
+ </div>
 <%= render "shared/navbar_bottom" %>
