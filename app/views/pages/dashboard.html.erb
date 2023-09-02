@@ -15,6 +15,7 @@
           <div class="session-name"><%= session.name %></div>
           <p>Date: <%= session.time.strftime('%-d %B %Y') %></p>
           <p>Hour: <%= session.time.strftime('%H:%M') %></p>
+          <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{session.group.subject.icon_creator}", class:"icon-creator" %>
         <% end %>
       </div>
     </div>
