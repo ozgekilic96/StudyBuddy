@@ -1,22 +1,23 @@
 <%= render "shared/navbar" %>
-<div class="map">
-  <div style="width: 90%; height: 258px; margin-left: 20px; margin-top: 10px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div class="container">
+  <div class="map d-flex justify-content-center mt-3">
+    <div style="width: 90%; height: 258px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-</div>
- <h2>Upcoming Sessions</h2>
-<% @my_sessions.each do |session| %>
-  <%= link_to group_session_path(session.group, session) do %>
+  <h2 class="text-center mt-3"><strong>Upcoming Sessions</strong></h2>
+  <% @my_sessions.each do |session| %>
     <div class="session-card">
-      <%# <%= image_tag session.group.group_picture, class: "session-image" %>
       <div class="session-details">
-        <div class="session-name"><%= session.name %></div>
-        <p><%= session.time %></p>
-        <p><%= session.description %></p>
+        <%= link_to group_session_path(session.group, session) do %>
+          <div class="session-name"><%= session.name %></div>
+          <p>Date: <%= session.time.strftime('%-d %B %Y') %></p>
+          <p>Hour: <%= session.time.strftime('%H:%M') %></p>
+        <% end %>
       </div>
     </div>
   <% end %>
-<% end %>
+</div>
 <%= render "shared/navbar_bottom" %>

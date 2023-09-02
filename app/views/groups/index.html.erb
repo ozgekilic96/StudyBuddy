@@ -1,14 +1,16 @@
 <%= render "shared/navbar" %>
-<div class="cards">
-<h2>My groups</h2>
-<% @my_groups.each do |group| %>
-  <div class="group-card">
-    <div class="group-image">
-      <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
+<div class="container">
+  <div class="cards">
+  <h2>My groups</h2>
+  <% @my_groups.each do |group| %>
+    <div class="group-card">
+      <div class="group-image">
+        <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
+      </div>
+      <div class="group-details">
+        <div class="group-name"><%= group.name %></div>
+      </div>
     </div>
-    <div class="group-details">
-      <div class="group-name"><%= group.name %></div>
-    </div>
-  </div>
-<% end %>
-<%= render "shared/navbar_bottom" %>
+  <% end %>
+  <%= render "shared/navbar_bottom" %>
+</div>

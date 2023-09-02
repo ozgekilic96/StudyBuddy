@@ -4,6 +4,7 @@
   border-radius: 50%;
   object-fit: cover;
 }
+
 .bg-dark{
   width: 100%;
 }
@@ -14,5 +15,12 @@
 }
 
 .btn-danger{
-  background-color: rgb(190, 43, 43);
+  background-color: #be2b2b;
+  width: 20%;
+  height: 15%;
+  border-radius: 11%;
+}
+
+.icon-creator{
+  width: 45px;
 }
