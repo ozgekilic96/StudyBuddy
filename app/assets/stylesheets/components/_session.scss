@@ -1,20 +1,18 @@
+a{
+  text-decoration: none;
+}
+
 .session-card {
   display: flex;
-  flex-direction: column; /* Change the flex direction to column */
+  flex-direction: column;
   background-color: #4e6cf0ef;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
   overflow: hidden;
   font-family: 'Your Chosen Font', sans-serif;
-
-
-//   transition: transform 0.2s ease-in-out;
-
-//   &:hover {
-//     transform: scale(1.05);
-//   }
 }
+
 h2 {
   font-family: 'Your Chosen Font', sans-serif;
   margin-left: 20px;
@@ -87,4 +85,3 @@ h2 {
     }
   }
 }
-

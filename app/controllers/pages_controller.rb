@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @page_title = "Dashboard"
+    @page_title = "Hello, #{current_user.first_name} 👋"
     @my_subjects = current_user.subjects.pluck(:id)
     @my_groups = Group.where(subject_id: @my_subjects).pluck(:id)
 

@@ -1,14 +1,16 @@
 <%= render "shared/navbar" %>
-<div class="group-card">
-    <h2><%= @session.name %></h2>
-    <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
-  <div class="session-card">
-    <div class="session-name text-white p-3">
-      <p>Adress: <%= @session.address %> </p>
-      <p >Date/Time  <%= @session.address %> </p>
+<div class="container">
+  <div class="group-card">
+      <h2><%= @session.name %></h2>
+      <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
+    <div class="session-card">
+      <div class="session-name text-white p-3">
+        <p>Adress: <%= @session.address %> </p>
+        <p>Date: <%= @session.time.strftime('%d-%m-%Y') %></p>
+        <p>Time: <%= @session.time.strftime('%H:%M:%S') %></p>
+      </div>
     </div>
   </div>
+  <%= link_to 'Send request', join_group_session_path(@session), method: :post, class: "btn btn-primary text-center mx-5" %>
 </div>
-<%= link_to 'Send request', join_group_session_path(@session), method: :post, class: "btn btn-primary text-center mx-5" %>
-
 <%= render "shared/navbar_bottom" %>
