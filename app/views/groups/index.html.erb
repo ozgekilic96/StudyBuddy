@@ -12,7 +12,7 @@
         </div>
       </div>
     <% end %>
-    <div class="btn btn-primary">Create a Group</div>
+    <%= link_to "Create Group", new_group_path(:group_id) , class: "btn btn-primary m-3 ", style: "background-color: #4e6cf0ef;" %>
     <div class="card bg-dark my-5"></div>
     <h2><strong>Groups I'm a member of</strong></h2>
     <% @my_groups.each do |group| %>

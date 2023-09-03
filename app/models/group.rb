@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+  # mount_uploader :group_picture, GroupPictureUploader
   belongs_to :user
   belongs_to :subject
   has_many :memberships, dependent: :destroy
