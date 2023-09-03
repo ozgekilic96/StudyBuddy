@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def index
+    @page_title = "My Sessions"
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
     @my_sessions = Session.where(id: @session_ids)
