@@ -35,6 +35,16 @@ class PagesController < ApplicationController
     @subjects = Subject.all
   end
 
+  def search
+    @page_title = "Search"
+    if params[:search]
+      search_term = params[:search].downcase
+      @groups = Group.where('LOWER(name) LIKE ? OR LOWER(description) LIKE ?', "%#{search_term}%", "%#{search_term}%")
+    else
+      @groups = Group.all
+    end
+  end
+
   def edit
   end
 

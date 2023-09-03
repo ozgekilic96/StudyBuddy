@@ -1,9 +1,10 @@
 class GroupsController < ApplicationController
   def index
-    @page_title = "Groups"
+    @page_title = "My Groups"
     @user = current_user
     @group_ids = @user.memberships.pluck(:group_id)
     @my_groups = Group.where(id: @group_ids)
+    @created_groups = Group.where(id: current_user.id)
   end
 
   def show

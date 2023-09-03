@@ -1,14 +1,14 @@
 <div class="bottom-navbar">
   <%= link_to dashboard_path do %>
-    <i class="fas fa-house-chimney"></i>
+    <i class="fas fa-house-chimney <%= 'active' if current_page?(dashboard_path) %>"></i>
   <% end %>
-  <%= link_to dashboard_path do %>
-    <i class="fas fa-search"></i>
-  <% end %>
-  <%= link_to groups_path do %>
-    <i class="fa-solid fa-people-group"></i>
+  <%= link_to search_path do %>
+    <i class="fas fa-search <%= 'active' if current_page?(search_path) %>"></i>
   <% end %>
   <%= link_to groups_path do %>
-    <i class="fa-regular fa-calendar-days"></i>
+    <i class="fa-solid fa-people-group <%= 'active' if current_page?(groups_path) %>"></i>
+  <% end %>
+  <%= link_to attendances_path do %>
+    <i class="fa-regular fa-calendar-days <%= 'active' if current_page?(attendances_path) %>"></i>
   <% end %>
 </div>
