@@ -10,9 +10,12 @@
             <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
             <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
       </div>
+    </div>
     <% end %>
-    <div class="btn btn-primary">Create a Group</div>
-    <div class="Sessions I'm a member of</strong></h2>
+     <div class="button-container">
+      <div class="btn btn-primary mt-2" style="background-color: #4e6cf0ef;">Create a Group</div>
+    </div>
+    <h2 class="header-session"><strong>Sessions I'm a member of</strong></h2>
     <% @my_sessions.each do |session| %>
       <div class="group-card">
         <div class="group-image">
