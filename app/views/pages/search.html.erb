@@ -8,6 +8,7 @@
       </button>
     </div>
   <% end %>
+  <h1 class="text-center">Groups</h1>
   <div class="cards">
     <% @groups.each do |group| %>
       <div class="group-card">
@@ -20,5 +21,25 @@
       </div>
     <% end %>
   </div>
+  <div class="card bg-dark my-4"></div>
+  <h1 class="text-center">Sessions</h1>
+  <% @sessions.each do |session| %>
+    <div class="session-card">
+      <div class="session-details">
+        <%= link_to group_session_path(session.group, session) do %>
+        <div class="d-flex justify-content-between ">
+          <div>
+            <div class="session-name"><%= session.name %></div>
+            <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+            <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+          </div>
+          <div>
+            <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{session.group.subject.icon_creator}", class:"icon-creator" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
 <%= render "shared/navbar_bottom" %>

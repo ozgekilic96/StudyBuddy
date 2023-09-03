@@ -116,7 +116,7 @@ Subject.create!(
 Group.create!(
   name: "Atomic and chemical physics",
   description: "We will break the atom into its particles together",
-  group_picture: "atomic_nei5yy",
+  group_picture: "atomic_nei5ya",
   subject_id: 1,
   user_id: rand(1..15)
 )
@@ -297,14 +297,14 @@ Group.create!(
 Group.create!(
   name: "Industrial Organization",
   description: "",
-  group_picture: "IndustrialOrganization.jpeg",
+  group_picture: "industrialOrganization_enifv3",
   subject_id: 9,
   user_id: rand(1..15)
 )
 Group.create!(
   name: "Industrial Engineering",
   description: "",
-  group_picture: "industrialOrganization_enifv3",
+  group_picture: "industrial_rkzvzl",
   subject_id: 10,
   user_id: rand(1..15)
 )
@@ -375,7 +375,7 @@ Group.create!(
 Group.create!(
   name: "Critical Pedagogy",
   description: "",
-  group_picture: "critical.jpg",
+  group_picture: "critical_wedjze",
   subject_id: 13,
   user_id: rand(1..15)
 )

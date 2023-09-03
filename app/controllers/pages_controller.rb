@@ -38,10 +38,12 @@ class PagesController < ApplicationController
   def search
     @page_title = "Search"
     if params[:search]
-      search_term = params[:search].downcase
-      @groups = Group.where('LOWER(name) LIKE ? OR LOWER(description) LIKE ?', "%#{search_term}%", "%#{search_term}%")
+      search_term = "%#{params[:search].downcase}%"
+      @groups = Group.where('LOWER(groups.name) LIKE ? OR LOWER(groups.description) LIKE ?', search_term, search_term).distinct
+      @sessions = Session.where('LOWER(name) LIKE ? OR LOWER(address) LIKE ?', search_term, search_term)
     else
       @groups = Group.all
+      @sessions = Session.all
     end
   end
 
