@@ -4,7 +4,9 @@ class SessionsController < ApplicationController
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
     @my_sessions = Session.where(id: @session_ids)
+    @created_sessions = Session.where(id: current_user.id)
   end
+
 
   def new
     @session = Session.new
