@@ -6,6 +6,9 @@
       <% end %>
     </div>
     <h1 class="page-title"><strong><%= @page_title %></strong></h1>
+    <div class="notification-icon <%= 'bang' if current_page?(profile_path) %>">
+      <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1693821738/notifications_dkq551.png"/>
+    </div>
     <div class="nav-item dropdown">
       <a href="#" class="user-profile" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.picture? %>
