@@ -43,7 +43,6 @@ h2 {
     color: #ffffffd3;
   }
 
-  /* Add more styling for session details as needed */
 }
 
 
@@ -58,9 +57,6 @@ h2 {
   transition: transform 0.2s ease-in-out;
   font-family: 'Your Chosen Font', sans-serif;
 
-  &:hover {
-    transform: scale(1.05);
-  }
 
   .group-image {
     max-width: 100%;

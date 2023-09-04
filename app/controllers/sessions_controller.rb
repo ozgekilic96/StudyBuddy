@@ -4,17 +4,18 @@ class SessionsController < ApplicationController
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
     @my_sessions = Session.where(id: @session_ids)
-    @created_sessions = Session.where(user_id: current_user.id)
+    @created_sessions = Session.where(id: current_user.id)
   end
+
 
   def new
     @session = Session.new
     @groups = current_user.groups
+
   end
 
   def create
     @session = Session.new(session_params)
-    @session.user = current_user
     if @session.save
       redirect_to session_path(@session)
     else
@@ -50,9 +51,10 @@ class SessionsController < ApplicationController
     redirect_to @session, notice: 'You have joined the session.'
   end
 
+  
   private
 
   def session_params
-    params.require(:session).permit(:name, :description, :address, :time, :group_id, )
+    params.require(:session).permit(:name, :description, :address, :time, :group_id)
   end
 end

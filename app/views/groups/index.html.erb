@@ -1,3 +1,4 @@
+
 <%= render "shared/navbar" %>
 <div class="container text-center">
   <div class="cards">
@@ -8,23 +9,45 @@
           <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
         </div>
         <div class="group-details">
-          <div class="group-name"><%= group.name %></div>
+               <div class="group-name"><%= group.name %></div>
+          <% if group.user == current_user %>
+            <%= link_to 'Edit', edit_group_path(group), class: " btn btn-primary m-3", style: "background-color: #4e6cf0ef; width: 80px;"  %>
+            <%= link_to 'Delete', group_path(group),data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
+          <% end %>
         </div>
       </div>
     <% end %>
-    <%= link_to "Create Group", new_group_path , class: "btn btn-primary m-3 ", style: "background-color: #4e6cf0ef;" %>
+    <%= link_to "Create Group", new_group_path , class: " btn btn-primary m-3 w-3", style: "background-color: #4e6cf0ef;" %>
     <div class="card bg-dark my-5"></div>
+
     <h2><strong>Groups I'm a member of</strong></h2>
-    <% @my_groups.each do |group| %>
-      <div class="group-card">
-        <div class="group-image">
-          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
+      <% @my_groups.each do |group| %>
+        <div class="group-card">
+          <div class="group-image">
+            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
+          </div>
+          <div class="group-details">
+            <div class="group-name"><%= group.name %></div>
+            <%= link_to "Leave Group", new_group_path , class: "btn btn-primary m-3 ", style: "background-color: #4e6cf0ef;" %>
+          </div>
         </div>
-        <div class="group-details">
-          <div class="group-name"><%= group.name %></div>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>
+
+
+<%# <script>
+  document.querySelectorAll('.delete-group i').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+      var groupId = this.getAttribute('data-group-id');
+      var confirmDelete = confirm('Are you sure you want to delete this group?');
+
+      if (confirmDelete) {
+
+        alert('Group with ID ' + groupId + ' deleted.');
+      }
+    });
+  });
+</script> %>
