@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   #post 'create', to: 'sessions#create'
   #get 'new', to: 'sessions#new'
 
-  resources :sessions, only: %i[show create new]
+
+  resources :sessions, only: %i[show create new destroy]
+  resources :memberships, only: %i[destroy]
   resources :attendances, only: [:update]
 
   resources :interested_subjects, only: %i[new create]
