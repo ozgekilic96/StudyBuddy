@@ -27,6 +27,7 @@ class PagesController < ApplicationController
     @page_title = "Profile"
     @user = current_user
     @subjects = current_user.subjects
+    @requests = Attendance.all
   end
 
   def subjects
