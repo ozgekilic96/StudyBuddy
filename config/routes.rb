@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'profile/subjects', to: 'pages#subjects', as: 'profilesubjects'
   get 'search', to: 'pages#search'
+  # get '/groups/:id/join', to: 'groups#join', as: 'join_group'
   get 'attendances', to: 'sessions#index'
 
   resources :interested_subjects, only: %i[new create]
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
     member do
       post 'join'
     end
+    resources :sessions, only: [:show]
+      member do
+        post 'join'
+      end
     resources :sessions, except: %i[index] do
       member do
         post 'join'

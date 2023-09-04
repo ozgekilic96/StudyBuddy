@@ -1,7 +1,38 @@
-<%= @group.name %>
-<img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @group.group_picture %>" />
-<%= link_to 'Join Group', join_group_path(@group), method: :post %>
-<% if @group.user == current_user %>
-  <%= link_to 'Edit Group', edit_group_path(@group) %>
+<%= render "shared/navbar" %>
+
+
+<div class="container text-center">
+  <h1 class="text-center">Group Info</h1>
+  <div class="cards">
+    <div class="group-card">
+      <div class="group-image">
+        <h2><%= @group.name %><h2>
+        <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @group.group_picture %>" alt="<%= @group.name %> Image"  />
+      </div>
+      <div class="group-details">
+        <%= @group.description %>
+      </div>
+    </div>
+      <% if @group.user == current_user %>
+      <% end %>
+
+</div>
+
+<% if @membership %>
+  <%= link_to 'Join Group', join_group_path(@group), data:{turbo_method: :post}, class: 'btn btn-success' %>
+  <% else %>
+  <h1>Already a member</h1>
 <% end %>
+
+
+<% if @sessions.nil? %>
+
+<h1>Opps there are currently no sessions</h1>
+<% else %>
+
+<%= @sessions %>
+
+<% end %>
+
+
 <%= render "shared/navbar_bottom" %>

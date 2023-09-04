@@ -16,7 +16,9 @@
           <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
         </div>
         <div class="group-details">
-          <div class="group-name"><%= group.name %></div>
+          <div class="group-name text-center"><%= group.name %></div>
+          <%= link_to "Group Info",group_path(group), class: "btn btn-primary" %>
+    </div>
         </div>
       </div>
     <% end %>
