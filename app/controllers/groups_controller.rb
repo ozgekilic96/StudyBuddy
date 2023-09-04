@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
     @user = current_user
     @group_ids = @user.memberships.pluck(:group_id)
     @my_groups = Group.where(id: @group_ids)
-    @created_groups = Group.where(id: current_user.id)
+    @created_groups = Group.where(user_id: current_user.id)
   end
 
   def show
@@ -18,12 +18,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.save
-      @subject = Subject.find(params[:id])
-      @interested_subjects = Interested_subject.new(subject: @subject, user: current_user.id)
-      @interested_subjects.save
-      redirect_to group_path
-
+    @group.user = current_user
+    if @group.save!
+      @subject = Subject.find(@group.subject_id)
+      InterestedSubject.create(subject: @subject, user: current_user) unless current_user.subjects.include? @subject
+      redirect_to group_path(@group)
     else
       render :new
     end
