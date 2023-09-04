@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   #get 'new', to: 'sessions#new'
 
   resources :sessions, only: %i[show create new]
+  resources :attendances, only: [:update]
 
   resources :interested_subjects, only: %i[new create]
   #resources :sessions, only: %i[new create]

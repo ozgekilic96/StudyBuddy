@@ -27,7 +27,8 @@ class PagesController < ApplicationController
     @page_title = "Profile"
     @user = current_user
     @subjects = current_user.subjects
-    @requests = Attendance.all
+    @requests = Attendance.joins(:session).where(sessions: { user: current_user })
+    @my_requests = Attendance.where(user: current_user)
   end
 
   def subjects
@@ -52,5 +53,11 @@ class PagesController < ApplicationController
   end
 
   def update
+  end
+
+  private
+
+  def attendance_params
+    params.require(:attendance).permit(:status)
   end
 end

@@ -28,3 +28,44 @@
 .name-subject-profile{
   margin-left: 50px;
 }
+
+.request {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+
+  .request-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .request-actions {
+    display: flex;
+    align-items: center;
+  }
+  .request-tag {
+    margin: 1px 4px;
+    padding: 2px 5px 0px 5px;
+    background-color: #bfbfbf;
+    color: white;
+    border-radius: 8px;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+}
+
+.request-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+
+  .request-info-title {
+    font-weight: bolder;
+    font-size: 1.2em;
+  }
+
+  .request-info-details {
+    font-weight: lighter;
+  }
+}
