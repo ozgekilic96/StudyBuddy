@@ -13,12 +13,17 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @subjects = Subject.all
   end
 
   def create
     @group = Group.new(group_params)
     if @group.save
+      @subject = Subject.find(params[:id])
+      @interested_subjects = Interested_subject.new(subject: @subject, user: current_user.id)
+      @interested_subjects.save
       redirect_to group_path
+
     else
       render :new
     end
@@ -51,6 +56,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :description, :group_picture)
+    params.require(:group).permit(:name, :description, :group_picture, :subject_id)
   end
 end

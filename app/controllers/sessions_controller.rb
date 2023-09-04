@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   def new
     @session = Session.new
     @groups = current_user.groups
-    
+
   end
 
   def create
