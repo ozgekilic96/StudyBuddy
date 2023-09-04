@@ -9,9 +9,40 @@
       <h3>🌎 <%= @user.address %></h3>
     </div>
   </div>
-  <h2 class="m-4 mt-5"><strong>Requests </strong></h2>
+  <h2 class="m-4 mt-5"><strong>Requests(My Sessions)</strong></h2>
   <% @requests.each do |request| %>
-    <%= request.status %>
+    <div class="request">
+      <div class='request-left'>
+        <div class="user-profile">
+          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= request.user.picture %>" />
+        </div>
+        <div class="request-info">
+          <div class="request-info-title">
+            <%= request.user.first_name %>
+          </div>
+          <div class="request-info-details">
+            <%= request.session.time.strftime('%l:%M %p') %>
+          </div>
+        </div>
+      </div>
+      <p><%= request.session.name %></p>
+      <% if request.pending? %>
+        <%= simple_form_for request do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+          <%= f.submit 'Accept', class: 'btn btn-green' %>
+        <% end %>
+        <%= simple_form_for request do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+          <%= f.submit 'Reject', class: 'btn btn-danger' %>
+        <% end %>
+      <% else %>
+        <p class="request-tag"><%= request.status %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
+  <% @my_requests.each do |request| %>
+    <p><%= request.session.name %> Status: <%= request.status %></p>
   <% end %>
   <h2 class="m-4 mt-5"><strong>My Subjects</strong></h2>
   <% @subjects.each do |subject| %>
