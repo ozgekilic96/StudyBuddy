@@ -28,7 +28,8 @@
           </div>
           <div class="group-details">
             <div class="group-name"><%= group.name %></div>
-            <%= link_to 'Delete', membership_path(Membership.find_by(group: group)), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
+            <% actual_member =  Membership.find_by(group: group) %>
+            <%= link_to 'Delete', membership_path(actual_member), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
           </div>
         </div>
       <% end %>
