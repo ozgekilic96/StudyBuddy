@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
     @my_sessions = Session.where(id: @session_ids)
-    @created_sessions = Session.where(id: current_user.id)
+    @created_sessions = Session.where(user_id: current_user.id)
   end
 
 
@@ -51,7 +51,7 @@ class SessionsController < ApplicationController
     redirect_to @session, notice: 'You have joined the session.'
   end
 
-  
+
   private
 
   def session_params
