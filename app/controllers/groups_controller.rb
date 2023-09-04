@@ -30,10 +30,9 @@ class GroupsController < ApplicationController
 
   def edit
     @group = Group.find(params[:id])
-    if @group.user != current_user
-      redirect_to @group, alert: 'You do not have permission to edit this group'
-    end
+
   end
+
 
   def update
     @group = current_user.groups.find(params[:id])
@@ -50,6 +49,11 @@ class GroupsController < ApplicationController
     @membership = Membership.new(group: @group, user: current_user)
     @membership.save
     redirect_to @group, notice: 'You have joined the group.'
+  end
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to groups_path, notice: 'You succesfully deleted this group'
   end
 
   private
