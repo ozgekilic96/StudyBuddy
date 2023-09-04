@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'attendances', to: 'sessions#index'
 
   resources :interested_subjects, only: %i[new create]
+  resources :sessions, only: %i[new create]
 
   resources :groups do
     member do
