@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
 
   def new
     @session = Session.new
+    @groups = current_user.groups
+    
   end
 
   def create
@@ -52,6 +54,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:name, :description, :address)
+    params.require(:session).permit(:name, :description, :address, :time, :group_id)
   end
 end
