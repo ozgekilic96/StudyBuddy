@@ -51,7 +51,7 @@ class SessionsController < ApplicationController
     redirect_to @session, notice: 'You have joined the session.'
   end
 
-  
+
   private
 
   def session_params

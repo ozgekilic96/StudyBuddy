@@ -41,6 +41,10 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: 'Your Chosen Font', sans-serif;
 
+  .btn-accepted{
+    background-color: #00d26a;
+  }
+
   .request-left {
     display: flex;
     align-items: center;
@@ -75,4 +79,28 @@
     font-weight: 100;
     color: #e5e5e5f7;
   }
+}
+
+.card-accepted{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #00d26a;
+}
+
+.card-rejected{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #f92f60;
+}
+
+.card-pending{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #ffa114;
 }

@@ -9,7 +9,7 @@
           <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
         </div>
         <div class="group-details">
-               <div class="group-name"><%= group.name %></div>
+          <div class="group-name"><%= group.name %></div>
           <% if group.user == current_user %>
             <%= link_to 'Edit', edit_group_path(group), class: " btn btn-primary m-3", style: "background-color: #4e6cf0ef; width: 80px;"  %>
             <%= link_to 'Delete', group_path(group),data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
