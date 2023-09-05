@@ -28,11 +28,11 @@
             <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
           </div>
           <div class="session-name"><%= session.name %></div>
-              <div class="user-profile">
-                <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
-              </div>
-              <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
-              <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+          <div class="user-profile">
+            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
+          </div>
+          <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+          <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
         </div>
       <% end %>
     <% end %>
