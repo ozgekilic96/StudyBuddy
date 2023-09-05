@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :create }, class: "btn btn-primary m-3" %>
+  <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :post }, class: "btn btn-primary m-3" %>
   <% if @session.attended_by_current_user?(current_user) %>
     <% @comments.each do |comment| %>
       <div class="card-general-comment">

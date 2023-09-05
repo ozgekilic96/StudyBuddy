@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #post 'create', to: 'sessions#create'
   #get 'new', to: 'sessions#new'
 
-  resources :sessions, only: %i[show create new destroy edit ] do
+  resources :sessions, only: %i[show create new destroy edit] do
     resources :attendances, only: %i[create]
     resources :comments, only: %i[create]
   end
