@@ -38,7 +38,6 @@
             <%= f.submit '❌', class: 'btn btn-light' %>
           <% end %>
         <% else %>
-          <%= link_to '❌', attendancedestroy_path(request), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
           <p class="request-tag"><%= request.status %></p>
         <% end %>
       </div>
@@ -46,21 +45,23 @@
   <% end %>
   <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
   <% @my_requests.each do |request| %>
-    <% if request.status == "Accepted" %>
-      <div class="card card-accepted mx-3 mb-2">
-        <p><%= request.session.name %></p>
-        <p><strong><%= request.status %> ✅</strong></p>
-      </div>
-    <% elsif request.status == "Rejected" %>
-      <div class="card card-rejected mx-3 mb-2">
-        <p><%= request.session.name %></p>
-        <p><strong><%= request.status %> ❌</strong></p>
-      </div>
-    <% else %>
-      <div class="card card-pending mx-3 mb-2">
-        <p><%= request.session.name %></p>
-        <p><strong><%= request.status %> ⏰</strong></p>
-      </div>
+    <% unless request.session.user.id === current_user.id %>
+      <% if request.status == "Accepted" %>
+        <div class="card card-accepted mx-3 mb-2">
+          <p><%= request.session.name %></p>
+          <p><strong><%= request.status %> ✅</strong></p>
+        </div>
+      <% elsif request.status == "Rejected" %>
+        <div class="card card-rejected mx-3 mb-2">
+          <p><%= request.session.name %></p>
+          <p><strong><%= request.status %> ❌</strong></p>
+        </div>
+      <% else %>
+        <div class="card card-pending mx-3 mb-2">
+          <p><%= request.session.name %></p>
+          <p><strong><%= request.status %> ⏰</strong></p>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
   <h2 class="m-4 mt-5"><strong>My Subjects</strong></h2>

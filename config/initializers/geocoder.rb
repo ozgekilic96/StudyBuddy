@@ -1,6 +1,6 @@
 Geocoder.configure(
   # Geocoding options
-  # timeout: 3,                 # geocoding service timeout (secs)
+  timeout: 3,                 # geocoding service timeout (secs)
   # lookup: :nominatim,         # name of geocoding service (symbol)
   lookup: :geoapify,
   api_key: "ac1263e0ae2d4e0ba31911c3fa8ba485",
