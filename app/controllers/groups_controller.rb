@@ -47,6 +47,8 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @membership = Membership.new(group: @group, user: current_user)
     @membership.save
+    @session = Session.find_by(group: @group)
+
     redirect_to @group, notice: 'You have joined the group.'
   end
   def destroy
