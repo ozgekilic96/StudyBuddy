@@ -14,9 +14,6 @@
 </div>
      <h2 class="text-center mt-3"><strong>Upcoming Sessions</strong></h2>
   <div id="session-cards">
-    <% if @group.sessions.empty? %>
-      <h1>Opps there are currently no sessions 🤷🏻‍♂️</h1>
-    <% else %>
       <% @group.sessions.each do |session| %>
         <div class="session-card" >
           <div class="session-name text-white p-3">
