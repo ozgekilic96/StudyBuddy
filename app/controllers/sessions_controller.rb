@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     @created_sessions = Session.where(user_id: current_user.id)
   end
 
-
   def new
     @session = Session.new
     @groups = current_user.groups
