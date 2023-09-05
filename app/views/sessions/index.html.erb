@@ -24,18 +24,20 @@
     </div>
     <h2 class="header-session"><strong>My upcoming sessions</strong></h2>
     <% @my_sessions.each do |session| %>
-      <%= link_to session_path(session) do %>
-        <div class="group-card">
-          <div class="group-image">
-            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
+      <% unless session.user.id === current_user.id %>
+        <%= link_to session_path(session) do %>
+          <div class="group-card">
+            <div class="group-image">
+              <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
+            </div>
+            <div class="session-name"><%= session.name %></div>
+            <div class="user-profile">
+              <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
+            </div>
+            <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+            <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
           </div>
-          <div class="session-name"><%= session.name %></div>
-          <div class="user-profile">
-            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
-          </div>
-          <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
-          <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
