@@ -47,17 +47,17 @@
   <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
   <% @my_requests.each do |request| %>
     <% if request.status == "Accepted" %>
-      <div class="card card-accepted mx-3">
+      <div class="card card-accepted mx-3 mb-2">
         <p><%= request.session.name %></p>
         <p><strong><%= request.status %> ✅</strong></p>
       </div>
     <% elsif request.status == "Rejected" %>
-      <div class="card card-rejected mx-3">
+      <div class="card card-rejected mx-3 mb-2">
         <p><%= request.session.name %></p>
         <p><strong><%= request.status %> ❌</strong></p>
       </div>
     <% else %>
-      <div class="card card-pending mx-3">
+      <div class="card card-pending mx-3 mb-2">
         <p><%= request.session.name %></p>
         <p><strong><%= request.status %> ⏰</strong></p>
       </div>
