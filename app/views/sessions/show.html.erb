@@ -12,6 +12,6 @@
       </div>
     </div>
   </div>
-    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_confirm: 'Are you sure?', turbo_method: :create } %>
+    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_confirm: 'Are you sure?', turbo_method: :post } %>
 </div>
 <%= render "shared/navbar_bottom" %>
