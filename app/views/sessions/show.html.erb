@@ -20,22 +20,25 @@
     <% end %>
   <div class="comments-card m-3">
     <% if @session.attended_by_current_user?(current_user) %>
-      <% @comments.each do |comment| %>
             <strong><h1>Comments</h1> </strong>
-          <div class="card-general-comment ">
-            <h2><%= comment.user.first_name %> </h2>
-            <p class="context mx-3">
+      <% @comments.each do |comment| %>
+        <div class="card-general-comment">
+          <div class="user-info">
+            <h2><%= comment.user.first_name %></h2>
+            <p><%= comment.created_at.strftime('%H:%M:%S') %></p>
+          </div>
+          <p class="comment-content">
             <%= comment.content %>
-            </p>
+          </p>
         </div>
       <% end %>
-      <div class="card-comment-form ">
-        <%= simple_form_for [@session, @comment] do |f| %>
-          <%= f.input :content %>
-          <%= f.submit "Submit ", class: "btn btn-primary" %>
-        <% end %>
-      </div>
     <% end %>
+    <div class="card-comment-form ">
+      <%= simple_form_for [@session, @comment] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Submit ", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>

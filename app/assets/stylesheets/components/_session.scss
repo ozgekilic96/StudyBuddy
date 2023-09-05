@@ -87,15 +87,11 @@ h2 {
 
 
 
-.card-general-comment {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
+
 
 .card-comment {
   background-color: #fff;
-  padding: 10px;
+
   border: 1px solid #ccc;
 }
 
@@ -114,4 +110,30 @@ h2 {
   margin-right: 100px;
   padding: 5px;
   text-align-last: center;
+}
+
+
+.card-general-comment {
+  border: 1px solid #bbbaba;
+  background-color: #f3f1f1;
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 300px;
+  margin-left: 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-general-comment h2 {
+  font-weight: bold;
+}
+
+.card-general-comment .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-general-comment .comment-content {
+  margin: 0;
 }
