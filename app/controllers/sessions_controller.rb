@@ -14,7 +14,10 @@ class SessionsController < ApplicationController
 
   def create
     @session = Session.new(session_params)
+    @session.user = current_user
+    @attendance = Attendance.new(user: current_user, session: @session, status: "Accepted")
     if @session.save
+      @attendance.save
       redirect_to session_path(@session)
     else
       render :new
