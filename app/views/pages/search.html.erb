@@ -17,9 +17,8 @@
         </div>
         <div class="group-details">
           <div class="group-name text-center"><%= group.name %></div>
-    </div>
         </div>
-      </div>
+      </a>
     <% end %>
   </div>
   <div class="card bg-dark my-4"></div>
@@ -28,19 +27,20 @@
     <div class="session-card">
       <div class="session-details">
         <%= link_to group_session_path(session.group, session) do %>
-        <div class="d-flex justify-content-between ">
-          <div>
-            <div class="session-name"><%= session.name %></div>
-            <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
-            <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <div class="session-name"><%= session.name %></div>
+              <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+              <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+            </div>
+            <div>
+              <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{session.group.subject.icon_creator}", class:"icon-creator" %>
+            </div>
           </div>
-          <div>
-            <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{session.group.subject.icon_creator}", class:"icon-creator" %>
-          </div>
-        </div>
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
 <%= render "shared/navbar_bottom" %>
+
