@@ -14,12 +14,12 @@
   background-color: #4e6cf0d3;
 }
 
-.btn-danger{
-  background-color: #be2b2b;
-  width: 20%;
-  height: 15%;
-  border-radius: 7%;
-}
+// .btn-danger{
+  // background-color: #be2b2b;
+  // width: 20%;
+  // height: 15%;
+  // border-radius: 7%;
+// }
 
 .icon-creator{
   width: 45px;
@@ -27,4 +27,80 @@
 
 .name-subject-profile{
   margin-left: 50px;
+}
+
+.request {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  padding: 8px;
+  color: #ffffff;
+  background-color: #4e6cf0ef;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Your Chosen Font', sans-serif;
+
+  .btn-accepted{
+    background-color: #00d26a;
+  }
+
+  .request-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .request-actions {
+    display: flex;
+    align-items: center;
+  }
+  .request-tag {
+    margin: 1px 4px;
+    padding: 2px 5px 0px 5px;
+    background-color: #bfbfbf;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+
+.request-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+
+  .request-info-title {
+    font-weight: bolder;
+    font-size: 1.2em;
+  }
+
+  .request-info-details {
+    font-weight: 100;
+    color: #e5e5e5f7;
+  }
+}
+
+.card-accepted{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #00d26a;
+}
+
+.card-rejected{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #f92f60;
+}
+
+.card-pending{
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  background-color: #ffa114;
 }

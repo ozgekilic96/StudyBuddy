@@ -9,7 +9,61 @@
       <h3>🌎 <%= @user.address %></h3>
     </div>
   </div>
-  <h2 class="m-4 mt-5">My Subjects</h2>
+  <h2 class="m-4 mt-5"><strong>Requests(My Sessions)</strong></h2>
+  <% @requests.each do |request| %>
+    <div class="request mx-3">
+      <div class='request-left'>
+        <div class="user-profile">
+          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= request.user.picture %>" />
+        </div>
+        <div class="request-info">
+          <div class="request-info-title">
+            <%= request.user.first_name %>
+          </div>
+          <div class="request-info-details">
+            <p><i class="far fa-calendar"></i> <%= request.session.time.strftime('%-d %B %Y') %></p>
+            <p><i class="fa-solid fa-clock"></i> <%= request.session.time.strftime('%H:%M') %></p>
+          </div>
+        </div>
+      </div>
+      <p><%= request.session.name %></p>
+      <div class="request-actions">
+        <% if request.pending? %>
+          <%= simple_form_for request do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+            <%= f.submit '✅', class: 'btn btn-accepted' %>
+          <% end %>
+          <%= simple_form_for request do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+            <%= f.submit '❌', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <%= link_to '❌', attendancedestroy_path(request), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
+          <p class="request-tag"><%= request.status %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
+  <% @my_requests.each do |request| %>
+    <% if request.status == "Accepted" %>
+      <div class="card card-accepted mx-3 mb-2">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ✅</strong></p>
+      </div>
+    <% elsif request.status == "Rejected" %>
+      <div class="card card-rejected mx-3 mb-2">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ❌</strong></p>
+      </div>
+    <% else %>
+      <div class="card card-pending mx-3 mb-2">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ⏰</strong></p>
+      </div>
+    <% end %>
+  <% end %>
+  <h2 class="m-4 mt-5"><strong>My Subjects</strong></h2>
   <% @subjects.each do |subject| %>
     <div class="card bg-dark mt-3"></div>
     <div class="d-flex justify-content-between align-items-center p-2 subjects-card text-center text-white">
@@ -19,8 +73,8 @@
     </div>
     <div class="card bg-dark"></div>
   <% end %>
-    <div class="button-container">
-      <%= link_to "Edit your subjects", profilesubjects_path, class: "btn btn-primary m-3 edit-button", style: "background-color: #4e6cf0ef;" %>
-    </div>
+  <div class="button-container">
+    <%= link_to "Edit your subjects", profilesubjects_path, class: "btn btn-primary m-3 edit-button", style: "background-color: #4e6cf0ef;" %>
+  </div>
 </div>
 <%= render "shared/navbar_bottom" %>

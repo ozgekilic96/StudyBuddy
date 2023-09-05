@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 Faker::Config.locale = 'de'
-User.create!(
+giovane = User.create!(
   first_name: "Giovane",
   last_name: "Nery",
   email: "giovane.nery@hotmail.com",
@@ -581,7 +581,18 @@ Session.create!(
   user: ozge,
   address: "karl marx allee 31, Berlin"
 )
-
+Session.create!(
+  name: "Learn Ukrainian",
+  description: " I'm new in Berlin and I want to learn German. If you want to learn Ukrainian , lets exchange the languages!:)",
+  time: "09.07.2023 13:25",
+  group_id: 2,
+  user: giovane,
+  address: "karl marx allee 35, Berlin"
+)
+Attendance.create!(
+  user: ulrich,
+  session_id: 5
+)
 Attendance.create!(
   user: ulrich,
   session_id: 1
@@ -603,10 +614,10 @@ Attendance.create!(
   session_id: 4
 )
 Attendance.create!(
-  user_id: 1,
+  user: giovane,
   session_id: 4
 )
 Attendance.create!(
-  user_id: 1,
+  user: giovane,
   session_id: 2
 )

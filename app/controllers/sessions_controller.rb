@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
     @page_title = "My Sessions"
     @user = current_user
     @session_ids = @user.attendances.pluck(:session_id)
-    @my_sessions = Session.where(id: @session_ids)
-    @created_sessions = Session.where(id: current_user.id)
+    @my_sessions = current_user.sessions.where(attendances: { status: "Accepted"} )
+    @created_sessions = Session.where(user_id: current_user)
   end
 
   def new
@@ -51,6 +51,7 @@ class SessionsController < ApplicationController
     @membership.save
     redirect_to @session, notice: 'You have joined the session.'
   end
+
 
   private
 
