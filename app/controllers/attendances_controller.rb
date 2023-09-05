@@ -8,9 +8,11 @@ class AttendancesController < ApplicationController
 
   def destroy
     @attendance = Attendance.find(params[:id])
-    @attendance.destroy
-    redirect_to profile_path, notice: 'You succesfully deleted this attendance'
+    if @attendance.destroy
+      redirect_to attendances_path, notice: 'You succesfully deleted this attendance'
+    end
   end
+
 
   def create
     @session = Session.find(params[:session_id])
