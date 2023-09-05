@@ -22,7 +22,7 @@
             <%= comment.content %>
             <% end %>
           </div>
-          <div class="card-form">
+          <div class="card-comment-form">
             <%= simple_form_for [@session, @comment] do |f| %>
               <%= f.input :content %>
               <%= f.submit "Submit ", class: "btn btn-primary" %>
