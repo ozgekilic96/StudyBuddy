@@ -22,7 +22,10 @@ class SessionsController < ApplicationController
   end
 
   def show
-    @session = Session.find(params[:id])
+    @group = Group.find(params[:group_id])
+    @sessions = @group.sessions
+
+     @session = Session.find(params[:id])
   end
 
   def update
@@ -55,4 +58,8 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:name, :description, :address, :time, :group_id)
   end
+
+  # def find_group
+  #   @group = Group.find(params[:group_id])
+  # end
 end
