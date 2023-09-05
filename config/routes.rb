@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   #post 'create', to: 'sessions#create'
   #get 'new', to: 'sessions#new'
 
-  resources :sessions, only: %i[show create new destroy] do
+  resources :sessions, only: %i[show create new destroy edit ] do
     resources :attendances, only: %i[create]
+    resources :comments, only: %i[create]
   end
 
   resources :memberships, only: %i[destroy]
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
       post 'join'
     end
 
-    resources :sessions, except: %i[index show new create] do
+    resources :sessions, except: %i[index show new create edit] do
       member do
         post 'join'
       end
