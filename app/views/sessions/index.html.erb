@@ -7,7 +7,10 @@
         <div class="group-card">
           <div class="group-image">
             <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
-          <div class="session-name"><%= session.name %></div>
+            <div class="session-name"><%= session.name %></div>
+              <div class="user-profile">
+                <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
+              </div>
               <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
               <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
               <%= link_to 'Edit', edit_session_path(session), class: " btn btn-primary m-3", style: "background-color: #4e6cf0ef; width: 80px;"  %>
@@ -16,7 +19,7 @@
         </div>
       <% end %>
     <% end %>
-     <div class="button-container">
+    <div class="button-container">
       <%= link_to "Create Session", new_session_path, class: "btn btn-primary m-3 ", style: "background-color: #4e6cf0ef;" %>
     </div>
     <h2 class="header-session"><strong>My upcoming sessions</strong></h2>
@@ -27,8 +30,11 @@
             <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
           </div>
           <div class="session-name"><%= session.name %></div>
-              <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
-              <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+          <div class="user-profile">
+            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
+          </div>
+          <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+          <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
         </div>
       <% end %>
     <% end %>

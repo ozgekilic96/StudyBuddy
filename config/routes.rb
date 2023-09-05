@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
   get 'profile/subjects', to: 'pages#subjects', as: 'profilesubjects'
   get 'search', to: 'pages#search'
+  get '/groups/:id/join', to: 'groups#join', as: 'join_group'
   get 'attendances', to: 'sessions#index'
   delete 'attendances/:id', to: 'attendances#destroy', as: 'attendancedestroy'
-  # post 'groups/:id/attendances', to: 'attendances#create', as: 'attendancecreate'
 
   #get 'show', to: 'sessions#show'
   #post 'create', to: 'sessions#create'
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     member do
       post 'join'
     end
+
     resources :sessions, except: %i[index show new create edit] do
       member do
         post 'join'

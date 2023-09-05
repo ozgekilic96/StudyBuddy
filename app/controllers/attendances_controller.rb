@@ -13,9 +13,8 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    @session = Session.find(params[:id])
-    @attendance = Attendance.new(attendance_params)
-    @attendance.user_id = current_user.id
+    @session = Session.find(params[:session_id])
+    @attendance = Attendance.new(user: current_user, session: @session)
     if @attendance.save
       redirect_to profile_path, notice: 'You succesfully created this attendance'
     end
@@ -24,6 +23,6 @@ class AttendancesController < ApplicationController
   private
 
   def attendance_params
-    params.require(:attendance).permit( :session_id, :status)
+    params.require(:attendance).permit(:session_id, :status)
   end
 end
