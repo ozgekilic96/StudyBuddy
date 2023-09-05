@@ -560,7 +560,7 @@ Session.create!(
   description: "I'm looking for 3 people to study Viruses",
   time: "09.07.2023 15:20",
   group: microbiology_group,
-  user: ozge,
+  user: giovane,
   address: "Pflüger Strasse 3, Berlin"
 )
 
@@ -569,7 +569,7 @@ Session.create!(
   description: "Anybody who wants to practice Slovenian welcome to join me !:)",
   time: "10.07.2023 16:20",
   group: slovenian_group,
-  user: ozge,
+  user: giovane,
   address: "Rudi-Dutschke-Straße 26, Berlin"
 )
 

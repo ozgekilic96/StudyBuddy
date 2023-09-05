@@ -27,7 +27,7 @@
   <% @sessions.each do |session| %>
     <div class="session-card">
       <div class="session-details">
-        <%= link_to group_session_path(session.group, session) do %>
+        <%= link_to session_path(session) do %>
         <div class="d-flex justify-content-between ">
           <div>
             <div class="session-name"><%= session.name %></div>

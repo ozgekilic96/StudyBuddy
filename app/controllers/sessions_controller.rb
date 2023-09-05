@@ -25,8 +25,9 @@ class SessionsController < ApplicationController
   end
 
   def show
+    @page_title = "Session Info"
     @session = Session.find(params[:id])
-    @comments = Comment.all
+    @comments = Comment.where(session_id: @session)
     @comment = Comment.new
     @user = current_user
   end
