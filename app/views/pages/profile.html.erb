@@ -11,37 +11,39 @@
   </div>
   <h2 class="m-4 mt-5"><strong>Requests(My Sessions)</strong></h2>
   <% @requests.each do |request| %>
-    <div class="request mx-3">
-      <div class='request-left'>
-        <div class="user-profile">
-          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= request.user.picture %>" />
+    <%# unless request.session.user.id === current_user.id %>
+      <div class="request mx-3">
+        <div class='request-left'>
+          <div class="user-profile">
+            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= request.user.picture %>" />
+          </div>
+          <div class="request-info">
+            <div class="request-info-title">
+              <%= request.user.first_name %>
+            </div>
+            <div class="request-info-details">
+              <p><i class="far fa-calendar"></i> <%= request.session.time.strftime('%-d %B %Y') %></p>
+              <p><i class="fa-solid fa-clock"></i> <%= request.session.time.strftime('%H:%M') %></p>
+            </div>
+          </div>
         </div>
-        <div class="request-info">
-          <div class="request-info-title">
-            <%= request.user.first_name %>
-          </div>
-          <div class="request-info-details">
-            <p><i class="far fa-calendar"></i> <%= request.session.time.strftime('%-d %B %Y') %></p>
-            <p><i class="fa-solid fa-clock"></i> <%= request.session.time.strftime('%H:%M') %></p>
-          </div>
+        <p><%= request.session.name %></p>
+        <div class="request-actions">
+          <% if request.pending? %>
+            <%= simple_form_for request do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+              <%= f.submit '✅', class: 'btn btn-accepted' %>
+            <% end %>
+            <%= simple_form_for request do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+              <%= f.submit '❌', class: 'btn btn-light' %>
+            <% end %>
+          <% else %>
+            <p class="request-tag"><%= request.status %></p>
+          <% end %>
         </div>
       </div>
-      <p><%= request.session.name %></p>
-      <div class="request-actions">
-        <% if request.pending? %>
-          <%= simple_form_for request do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
-            <%= f.submit '✅', class: 'btn btn-accepted' %>
-          <% end %>
-          <%= simple_form_for request do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
-            <%= f.submit '❌', class: 'btn btn-light' %>
-          <% end %>
-        <% else %>
-          <p class="request-tag"><%= request.status %></p>
-        <% end %>
-      </div>
-    </div>
+    <%# end %>
   <% end %>
   <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
   <% @my_requests.each do |request| %>
