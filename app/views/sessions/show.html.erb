@@ -1,8 +1,8 @@
 <%= render "shared/navbar" %>
 <div class="container">
   <div class="group-card">
-      <h2><%= @session.name %></h2>
-      <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
+    <h2><%= @session.name %></h2>
+    <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
     <div class="session-card">
       <div class="session-name text-white p-3">
         <p><i class="fas fa-map-marker-alt"></i>  <%= @session.address %> </p>
@@ -12,24 +12,24 @@
       </div>
     </div>
   </div>
-    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :create }, class: "btn btn-primary m-3" %>
-    <% if @session.attended_by_current_user?(current_user) %>
-      <% @comments.each do |comment| %>
-        <div class="card-general-comment">
-          <div class="card-comment">
-            <h3>Comments</h3>
-            <%= comment.user.first_name %>
-            <%= comment.content %>
-            <% end %>
-          </div>
-          <div class="card-form">
-            <%= simple_form_for [@session, @comment] do |f| %>
-              <%= f.input :content %>
-              <%= f.submit "Submit ", class: "btn btn-primary" %>
-            <% end %>
-          </div>
+  <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :create }, class: "btn btn-primary m-3" %>
+  <% if @session.attended_by_current_user?(current_user) %>
+    <% @comments.each do |comment| %>
+      <div class="card-general-comment">
+        <div class="card-comment">
+          <h3>Comments</h3>
+          <%= comment.user.first_name %>
+          <%= comment.content %>
         </div>
-
+      </div>
     <% end %>
+    <div class="card-form">
+      <%= simple_form_for [@session, @comment] do |f| %>
+        <%= f.input :content %>
+        <%= f.submit "Submit ", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 <%= render "shared/navbar_bottom" %>
+
