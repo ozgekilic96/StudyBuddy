@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: %i[show create new destroy edit ] do
     resources :attendances, only: %i[create]
-    resources :attendances, only: %i[create]
+    resources :comments, only: %i[create]
   end
 
   resources :memberships, only: %i[destroy]
