@@ -6,7 +6,7 @@
   <div class="cards">
     <div class="group-card">
       <div class="group-image">
-        <h2><%= @group.name %><h2>
+        <h2><%= @group.name %></h2>
         <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @group.group_picture %>" alt="<%= @group.name %> Image"  />
       </div>
       <div class="group-details">
@@ -18,21 +18,42 @@
 
 </div>
 
-<% if @membership %>
+
+
+  <div id="session-cards" style="display: none;">
+    <% if @group.sessions.empty? %>
+      <h1>Opps there are currently no sessions 🤷🏻‍♂️</h1>
+    <% else %>
+      <% @group.sessions.each do |session| %>
+        <div class="session-card" >
+          <div class="session-name text-white p-3">
+            <p><i class="fas fa-map-marker-alt"></i>  <%= session.address %> </p>
+            <p><i class="fas fa-info-circle"></i> <%= session.description %> </p>
+            <p><i class="far fa-calendar"></i> <%= session.time.strftime('%d-%m-%Y') %></p>
+            <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M:%S') %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+ <% if Membership.where(user: current_user, group: @group).empty? %>
   <%= link_to 'Join Group', join_group_path(@group), data:{turbo_method: :post}, class: 'btn btn-success' %>
   <% else %>
-  <h1>Already a member</h1>
-<% end %>
-
-
-<% if @sessions.nil? %>
-
-<h1>Opps there are currently no sessions</h1>
-<% else %>
-
-<%= @sessions %>
-
-<% end %>
-
+    <h1>"Already a member"</h1>
+  <% end %>
 
 <%= render "shared/navbar_bottom" %>
+
+<script>
+  document.addEventListener('turbo:load', () => {
+    const joinGroupButton = document.querySelector('[data-toggle-sessions="true"]');
+    const sessionCards = document.getElementById('session-cards');
+
+    if (joinGroupButton && sessionCards) {
+      joinGroupButton.addEventListener('click', () => {
+        sessionCards.style.display = 'block'; // Show session cards when clicked
+      });
+    }
+  });
+</script>
