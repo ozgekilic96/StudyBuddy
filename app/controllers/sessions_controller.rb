@@ -48,7 +48,6 @@ class SessionsController < ApplicationController
     redirect_to sessions_path, notice: 'You succesfully deleted this session'
   end
 
-
   private
 
   def session_params
