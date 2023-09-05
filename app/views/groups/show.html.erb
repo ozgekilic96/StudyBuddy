@@ -1,8 +1,5 @@
 <%= render "shared/navbar" %>
-
-
 <div class="container text-center">
-  <h1 class="text-center">Group Info</h1>
   <div class="cards">
     <div class="group-card">
       <div class="group-image">
@@ -13,14 +10,10 @@
         <%= @group.description %>
       </div>
     </div>
-      <% if @group.user == current_user %>
-      <% end %>
 
 </div>
-
-
-
-  <div id="session-cards" style="display: none;">
+     <h2 class="text-center mt-3"><strong>Upcoming Sessions</strong></h2>
+  <div id="session-cards">
     <% if @group.sessions.empty? %>
       <h1>Opps there are currently no sessions 🤷🏻‍♂️</h1>
     <% else %>
@@ -37,23 +30,10 @@
     <% end %>
   </div>
 
- <% if Membership.where(user: current_user, group: @group).empty? %>
-  <%= link_to 'Join Group', join_group_path(@group), data:{turbo_method: :post}, class: 'btn btn-success' %>
+  <% if Membership.where(user: current_user, group: @group).empty? %>
+  <%= link_to 'Join Group', join_group_path(@group), data:{turbo_method: :post}, class: 'btn btn-primary' %>
   <% else %>
-    <h1>"Already a member"</h1>
+  <div class="card-going"> <h6>"You are member of this group"</h6> </div>
   <% end %>
 
 <%= render "shared/navbar_bottom" %>
-
-<script>
-  document.addEventListener('turbo:load', () => {
-    const joinGroupButton = document.querySelector('[data-toggle-sessions="true"]');
-    const sessionCards = document.getElementById('session-cards');
-
-    if (joinGroupButton && sessionCards) {
-      joinGroupButton.addEventListener('click', () => {
-        sessionCards.style.display = 'block'; // Show session cards when clicked
-      });
-    }
-  });
-</script>

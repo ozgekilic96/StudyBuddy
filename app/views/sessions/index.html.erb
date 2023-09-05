@@ -37,7 +37,15 @@
             <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
             <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
           </div>
+
+          <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
+          <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+            <% attendancy =  Attendance.find_by(session: session) %>
+            <%= link_to 'I am not going', attendance_path(attendancy), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
+        </div>
+
         <% end %>
+
       <% end %>
     <% end %>
   </div>
