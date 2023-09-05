@@ -10,6 +10,8 @@
           <div class="session-name"><%= session.name %></div>
               <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
               <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+              <%= link_to 'Edit', edit_session_path(session), class: " btn btn-primary m-3", style: "background-color: #4e6cf0ef; width: 80px;"  %>
+              <%= link_to 'Delete', session_path(session),data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
           </div>
         </div>
       <% end %>

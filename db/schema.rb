@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_104347) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_070248) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_104347) do
     t.string "status", default: "Pending", null: false
     t.index ["session_id"], name: "index_attendances_on_session_id"
     t.index ["user_id"], name: "index_attendances_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "session_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_comments_on_session_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -96,6 +106,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_104347) do
 
   add_foreign_key "attendances", "sessions"
   add_foreign_key "attendances", "users"
+  add_foreign_key "comments", "sessions"
+  add_foreign_key "comments", "users"
   add_foreign_key "groups", "subjects"
   add_foreign_key "groups", "users"
   add_foreign_key "interested_subjects", "subjects"

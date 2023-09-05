@@ -24,6 +24,14 @@ class SessionsController < ApplicationController
 
   def show
     @session = Session.find(params[:id])
+    @comments = Comment.all
+    @comment = Comment.new
+    @user = current_user
+  end
+
+  def edit
+    @session = Session.find(params[:id])
+
   end
 
   def update
@@ -36,18 +44,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  def edit
+  def destroy
     @session = Session.find(params[:id])
-    if @session.user != current_user
-      redirect_to @session, alert: 'You do not have permission to edit this session'
-    end
-  end
-
-  def join
-    @session = Session.find(params[:id])
-    @membership = Membership.new(session: @session, user: current_user)
-    @membership.save
-    redirect_to @session, notice: 'You have joined the session.'
+    @session.destroy
+    redirect_to sessions_path, notice: 'You succesfully deleted this session'
   end
 
 
@@ -56,4 +56,5 @@ class SessionsController < ApplicationController
   def session_params
     params.require(:session).permit(:name, :description, :address, :time, :group_id)
   end
+
 end

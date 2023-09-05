@@ -12,6 +12,24 @@
       </div>
     </div>
   </div>
-    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_confirm: 'Are you sure?', turbo_method: :create } %>
+    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :create }, class: "btn btn-primary m-3" %>
+    <% if @session.attended_by_current_user?(current_user) %>
+      <% @comments.each do |comment| %>
+        <div class="card-general-comment">
+          <div class="card-comment">
+            <h3>Comments</h3>
+            <%= comment.user.first_name %>
+            <%= comment.content %>
+            <% end %>
+          </div>
+          <div class="card-form">
+            <%= simple_form_for [@session, @comment] do |f| %>
+              <%= f.input :content %>
+              <%= f.submit "Submit ", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+
+    <% end %>
 </div>
 <%= render "shared/navbar_bottom" %>
