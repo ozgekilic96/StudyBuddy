@@ -11,7 +11,7 @@
   </div>
   <h2 class="m-4 mt-5"><strong>Requests(My Sessions)</strong></h2>
   <% @requests.each do |request| %>
-    <div class="request">
+    <div class="request mx-3">
       <div class='request-left'>
         <div class="user-profile">
           <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= request.user.picture %>" />
@@ -21,28 +21,47 @@
             <%= request.user.first_name %>
           </div>
           <div class="request-info-details">
-            <%= request.session.time.strftime('%l:%M %p') %>
+            <p><i class="far fa-calendar"></i> <%= request.session.time.strftime('%-d %B %Y') %></p>
+            <p><i class="fa-solid fa-clock"></i> <%= request.session.time.strftime('%H:%M') %></p>
           </div>
         </div>
       </div>
       <p><%= request.session.name %></p>
-      <% if request.pending? %>
-        <%= simple_form_for request do |f| %>
-          <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
-          <%= f.submit 'Accept', class: 'btn btn-green' %>
+      <div class="request-actions">
+        <% if request.pending? %>
+          <%= simple_form_for request do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted'} %>
+            <%= f.submit '✅', class: 'btn btn-accepted' %>
+          <% end %>
+          <%= simple_form_for request do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
+            <%= f.submit '❌', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <%= link_to '❌', attendancedestroy_path(request), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } %>
+          <p class="request-tag"><%= request.status %></p>
         <% end %>
-        <%= simple_form_for request do |f| %>
-          <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
-          <%= f.submit 'Reject', class: 'btn btn-danger' %>
-        <% end %>
-      <% else %>
-        <p class="request-tag"><%= request.status %></p>
-      <% end %>
+      </div>
     </div>
   <% end %>
   <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
   <% @my_requests.each do |request| %>
-    <p><%= request.session.name %> Status: <%= request.status %></p>
+    <% if request.status == "Accepted" %>
+      <div class="card card-accepted mx-3">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ✅</strong></p>
+      </div>
+    <% elsif request.status == "Rejected" %>
+      <div class="card card-rejected mx-3">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ❌</strong></p>
+      </div>
+    <% else %>
+      <div class="card card-pending mx-3">
+        <p><%= request.session.name %></p>
+        <p><strong><%= request.status %> ⏰</strong></p>
+      </div>
+    <% end %>
   <% end %>
   <h2 class="m-4 mt-5"><strong>My Subjects</strong></h2>
   <% @subjects.each do |subject| %>
