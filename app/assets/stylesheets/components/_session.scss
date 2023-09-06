@@ -43,13 +43,10 @@ p {
   color: #332C39;
 }
 
-
-
-
 .group-card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #F0EEED;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
@@ -67,9 +64,10 @@ p {
 
   .group-details {
     padding: 20px;
+    color: #0a0a0a;
 
     .group-name {
-      font-size: 1.2rem;
+      font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
       color: #0a0a0a;
@@ -105,7 +103,7 @@ p {
   background-color: #2E8A99;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color:white;
+  color:F0EEED;
   margin-left: 50px;
   margin-right: 50px;
   padding: 5px;
@@ -115,7 +113,7 @@ p {
 
 .card-general-comment {
   border: 1px solid #bbbaba;
-  background-color: #f3f1f1;
+  background-color: #F0EEED;
   border-radius: 10px;
   padding: 5px;
   max-width: 300px;

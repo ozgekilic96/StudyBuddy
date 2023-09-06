@@ -59,7 +59,7 @@
     <% elsif request.status == "Rejected" %>
       <div class="card card-rejected mx-3 mb-2">
         <p><%= request.session.name %></p>
-        <p><strong><%= request.status %> ❌</strong></p>
+        <p><strong><%= request.status %></strong></p>
       </div>
     <% else %>
       <div class="card card-pending mx-3 mb-2">
@@ -79,7 +79,7 @@
     <div class="card bg-dark"></div>
   <% end %>
   <div class="button-container">
-    <%= link_to "Edit your subjects", profilesubjects_path, class: "btn btn-primary m-3 edit-button", style: "background-color: #4e6cf0ef;" %>
+    <%= link_to "Edit your subjects", profilesubjects_path, class: "btn m-3 edit-button" %>
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>

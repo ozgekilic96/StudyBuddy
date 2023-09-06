@@ -3,21 +3,31 @@
   <div class="cards">
     <h2><strong>Created Sessions</strong></h2>
     <% @created_sessions.each do |session| %>
-      <%= link_to session_path(session) do %>
         <div class="group-card">
+      <%= link_to session_path(session) do %>
           <div class="group-image">
             <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.group.group_picture %>" />
-            <div class="session-name"><%= session.name %></div>
+          </div>
+      <% end %>
+            <div class="session-name mt-2"><%= session.name %></div>
+            <div class="d-flex justify-content-between" style="margin-right: 70px; margin-left: 70px; margin-bottom: 20px;">
               <div class="user-profile">
-                <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
+                  <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= session.user.picture %>" />
               </div>
-              <p><i class="far fa-calendar"></i> <%= session.time.strftime('%-d %B %Y') %></p>
-              <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
-              <%= link_to 'Edit', edit_session_path(session), class: " btn btn-primary m-3", style: "background-color: #4e6cf0ef; width: 80px;"  %>
-              <%= link_to 'Delete', session_path(session),data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
+              <div class="user-details">
+                  <p><i class="far fa-calendar" ></i> <%= session.time.strftime('%-d %B %Y') %></p>
+                  <p><i class="fa-solid fa-clock"></i><%= session.time.strftime('%H:%M') %></p>
+              </div>
+              <div class="edit-delete-icons">
+                  <%= link_to edit_session_path(session) do %>
+                      <i class="fa-solid fa-pen-to-square" style="color: #0e2954; font-size: 20px; margin: 5px;"></i>
+                  <% end %>
+                  <%= link_to session_path(session), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do %>
+                      <i class="fa-solid fa-trash-can" style="color: #0e2954; font-size: 20px;"></i>
+                  <% end %>
+              </div>
           </div>
         </div>
-      <% end %>
     <% end %>
     <div class="button-container">
       <%= link_to "Create Session", new_session_path, class: "btn btn-primary m-3 ", style: "background-color: #4e6cf0ef;" %>
