@@ -3,10 +3,12 @@
     <h1>StudyBuddy</h1>
     <p class="mb-4">Group. Learn. Thrive.</p>
     <div class="homepage-img">
-      <%= image_tag "back.png", style: "width: 400px; margin: 0 auto;" %>
+      <%= image_tag "back.png", style: "width: 350px; margin: 0 auto;" %>
     </div>
-    <h5 class="mt-2">Welcome to StudyBuddy</h5>
-    <h5>Empower your studies with collaborative learning on StudyBuddy's dynamic platform.</h5>
+    <div class="header-home mx-2">
+      <h5 class="mt-2">Welcome to StudyBuddy</h5>
+      <h6>Empower your studies with collaborative learning on StudyBuddy's dynamic platform.</h6>
+    </div>
     <div class="mt-5">
       <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
     </div>
