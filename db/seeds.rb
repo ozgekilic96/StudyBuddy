@@ -538,7 +538,7 @@ Group.create!(
   user_id: rand(1..15)
 )
 
-100.times do
+50.times do
   Membership.create!(
     group_id: Group.pluck(:id).sample,
     user_id: User.pluck(:id).sample,
@@ -553,7 +553,8 @@ Session.create!(
   time: "09.07.2023 19:20",
   group: ecology_group,
   user: ozge,
-  address: "Rigaer Strasse 5, Berlin"
+  city: "Berlin",
+  street_name: "Rigaer Strasse 5"
 )
 Session.create!(
   name: "Microbiology - Viruses :)",
@@ -561,7 +562,8 @@ Session.create!(
   time: "09.07.2023 15:20",
   group: microbiology_group,
   user: giovane,
-  address: "Pflüger Strasse 3, Berlin"
+  city: "Berlin",
+  street_name: "Pflüger Strasse 3"
 )
 
 Session.create!(
@@ -570,7 +572,8 @@ Session.create!(
   time: "10.07.2023 16:20",
   group: slovenian_group,
   user: giovane,
-  address: "Rudi-Dutschke-Straße 26, Berlin"
+  city: "Berlin",
+  street_name: "Rudi-Dutschke-Straße 26"
 )
 
 Session.create!(
@@ -579,7 +582,8 @@ Session.create!(
   time: "09.07.2023 13:20",
   group: ukranian_group,
   user: ozge,
-  address: "karl marx allee 31, Berlin"
+  city: "Berlin",
+  street_name: "karl marx allee 31"
 )
 Session.create!(
   name: "Learn Ukrainian",
@@ -587,7 +591,17 @@ Session.create!(
   time: "09.07.2023 13:25",
   group_id: 2,
   user: giovane,
-  address: "karl marx allee 35, Berlin"
+  city: "Berlin",
+  street_name: "karl marx allee 35"
+)
+Session.create!(
+  name: "JavaScript Lovers",
+  description: " Lets code !:)",
+  time: "09.07.2023 13:25",
+  group_id: 18,
+  user: giovane,
+  city: "Berlin",
+  street_name: "karl marx allee 35"
 )
 Attendance.create!(
   user: ulrich,
