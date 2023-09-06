@@ -5,11 +5,11 @@
     <h2><%= @session.name %></h2>
     <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
     <div class="session-card">
-      <div class="session-name text-white p-3">
-        <p><i class="fas fa-map-marker-alt"></i>  <%= @session.city %> </p>
-        <p><i class="fas fa-info-circle"></i> <%= @session.description %> </p>
-        <p><i class="far fa-calendar"></i> <%= @session.time.strftime('%d-%m-%Y') %></p>
-        <p><i class="fa-solid fa-clock"></i><%= @session.time.strftime('%H:%M:%S') %></p>
+      <div class="session-name  p-3">
+        <p><i class="fas fa-map-marker-alt" style="color: #0E2954;"></i>  <%= @session.city %>, <%= @session.street_name %> </p>
+        <p><i class="fas fa-info-circle" style="color: #0E2954;"></i> <%= @session.description %> </p>
+        <p><i class="far fa-calendar" style="color: #0E2954;"></i> <%= @session.time.strftime('%d-%m-%Y') %></p>
+        <p><i class="fa-solid fa-clock" style="color: #0E2954;"></i><%= @session.time.strftime('%H:%M:%S') %></p>
       </div>
     </div>
   </div>
