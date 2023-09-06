@@ -100,12 +100,12 @@ p {
   color:black
 }
 .card-going {
-  background-color: #F0EEED;
+  background-color: #2E8A99;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color:F0EEED;
   margin-left: 50px;
-  margin-right: 100px;
+  margin-right: 50px;
   padding: 5px;
   text-align-last: center;
 }
@@ -134,4 +134,9 @@ p {
 
 .card-general-comment .comment-content {
   margin: 0;
+}
+
+h6 {
+margin-bottom: 0;
+
 }

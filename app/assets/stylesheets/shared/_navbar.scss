@@ -41,13 +41,13 @@
 }
 .search-input {
   padding: 10px 30px 10px 10px; /* Adicione espaço à direita para o ícone */
-  border: 1px solid #4E6BF0;
-  background-color: #4E6BF0;
+  border: 1px solid #2E8A99;
+  background-color: #0E2954;
   border-radius: 5px;
   width: 100%;
 }
 .search-input::placeholder {
-  color: #ffffffac;
+  color: #F0EEED;
 }
 .search-button {
   background: none;
@@ -59,6 +59,6 @@
   cursor: pointer;
 }
 .search-button i {
-  color: #B5D7EA; /* Cor do ícone */
+  color: #F0EEED; /* Cor do ícone */
   font-size: 18px; /* Tamanho do ícone */
 }
