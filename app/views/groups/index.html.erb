@@ -1,4 +1,3 @@
-
 <%= render "shared/navbar" %>
 <div class="container text-center">
   <div class="cards">
@@ -6,28 +5,29 @@
     <% @created_groups.each do |group| %>
       <div class="group-card">
         <%= link_to group_path(group) do %>
-        <div class="group-image">
-          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
-        </div>
-        <div class="group-details">
-          <div class="group-name"><%= group.name %></div>
-          <% end %>
-          <% if group.user == current_user %>
-           <div class="edit-delete-icons">
-                  <%= link_to edit_session_path(session) do %>
-                      <i class="fa-solid fa-pen-to-square" style="color: #0e2954; font-size: 20px; margin: 5px;"></i>
-                  <% end %>
-                  <%= link_to session_path(session), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do %>
-                      <i class="fa-solid fa-trash-can" style="color: #0e2954; font-size: 20px;"></i>
-                  <% end %>
-              </div>
-          <% end %>
-        </div>
+          <div class="group-image">
+            <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
+          </div>
+          <div class="group-details">
+            <div class="group-name mt-2">
+              <%= group.name %>
+            </div>
+          </div>
+        <% end %>
+        <% if group.user == current_user %>
+          <div class="edit-delete-icons">
+            <%= link_to edit_session_path(session) do %>
+                <i class="fa-solid fa-pen-to-square" style="color: #0e2954; font-size: 20px; margin: 5px;"></i>
+            <% end %>
+            <%= link_to session_path(session), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do %>
+                <i class="fa-solid fa-trash-can" style="color: #0e2954; font-size: 20px;"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
     <%= link_to "Create Group", new_group_path , class: " btn btn-primary m-3 w-3", style: "background-color: #C92C6D;" %>
     <div class="card bg-dark my-5"></div>
-
     <h2><strong>Groups I'm a member of</strong></h2>
       <% @my_groups.each do |group| %>
         <div class="group-card">
@@ -43,11 +43,9 @@
           <% end %>
       </div>
     <% end %>
-
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>
-
 
 <%# <script>
   document.querySelectorAll('.delete-group i').forEach(function(icon) {
