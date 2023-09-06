@@ -4,7 +4,9 @@ body {
   background-color: #0E2954;
   color:  #F0EEED;
 }
-
+.text-home{
+  color:  #F0EEED;
+}
 .background-home{
   background-color: #0E2954;
   position: fixed;
@@ -38,13 +40,15 @@ img {
 
 .btn-primary{
   width: 38%;
+  border: 0px;
   background-color: #2E8A99;
   color: #F0EEED;
   border-radius: 20px;
- 
+
 }
 .btn-secondary{
   width: 25%;
+  border: 0px;
   margin-left: 150px;
   background-color: #2E8A99;
   border-color: #0D6EFD;
@@ -56,4 +60,3 @@ img {
   }
 
 }
-

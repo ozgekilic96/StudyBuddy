@@ -11,6 +11,10 @@ a{
   margin: 20px;
   overflow: hidden;
   font-family: 'Your Chosen Font', sans-serif;
+
+  p{
+    font-size: 14px;
+  }
 }
 
 h2 {
@@ -31,7 +35,7 @@ h2 {
 }
 
 .session-name {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #332C39;
