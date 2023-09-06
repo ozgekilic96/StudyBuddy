@@ -25,7 +25,7 @@
         </div>
       </div>
     <% end %>
-    <%= link_to "Create Group", new_group_path , class: " btn btn-primary m-3 w-3", style: "background-color: #4e6cf0ef;" %>
+    <%= link_to "Create Group", new_group_path , class: " btn btn-primary m-3 w-3", style: "background-color: #C92C6D;" %>
     <div class="card bg-dark my-5"></div>
 
     <h2><strong>Groups I'm a member of</strong></h2>
@@ -38,7 +38,7 @@
           <div class="group-details">
             <div class="group-name"><%= group.name %></div>
             <% actual_member =  Membership.find_by(group: group) %>
-            <%= link_to 'Leave', membership_path(actual_member), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3"%>
+            <%= link_to 'Leave', membership_path(actual_member), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, class: "btn btn-danger m-3 ",  style: "border-radius: 20px;" %>
           </div>
           <% end %>
       </div>
