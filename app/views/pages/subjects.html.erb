@@ -1,14 +1,16 @@
-<div class="text-center mt-5">
-  <h2>Choose your subjects of interest</h2>
-</div>
-<div class="container mt-4">
-  <%= simple_form_for(@interested_subject) do |f| %>
-    <%= f.association :subject, collection: @subjects,  as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector", multiple: true, checked: current_user.subject_ids }, item_wrapper_class: 'tag-item text-center' %>
+<div class="container m-0 text-center">
+  <div class="mt-5">
+    <h2>Choose your subjects of interest</h2>
+  </div>
+  <div class="container mt-4">
+    <%= simple_form_for(@interested_subject) do |f| %>
+      <%= f.association :subject, collection: @subjects,  as: :check_boxes, include_hidden: false, input_html: { class: "tag-selector", multiple: true, checked: current_user.subject_ids }, item_wrapper_class: 'tag-item text-center' %>
+      <div class="text-center">
+        <%= f.submit "Add these subjects", class: "btn edit-button rounded" %>
+      </div>
+    <% end %>
     <div class="text-center">
-      <%= f.submit "Add these subjects", class: "btn btn-primary rounded" %>
+      <%= link_to "Skip this part", dashboard_path, class: "btn edit-button rounded mt-3" %>
     </div>
-  <% end %>
-  <div class="text-center">
-    <%= link_to "Skip this part", dashboard_path, class: "btn btn-primary rounded mt-3" %>
   </div>
 </div>

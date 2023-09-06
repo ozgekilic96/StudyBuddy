@@ -11,8 +11,8 @@
   <h1 class="text-center">Groups</h1>
   <div class="cards">
     <% @groups.each do |group| %>
-      <a href="<%= group_path(group) %>" class="group-card">
-        <div class="d-flex">
+      <a href="<%= group_path(group) %>">
+        <div class="d-flex align-items-center p-2 group-card">
           <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{group.subject.icon_creator}", class:"icon-creator" %>
           <div class="group-details">
             <div class="group-name text-center"><%= group.name %></div>

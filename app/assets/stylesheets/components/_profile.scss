@@ -14,13 +14,17 @@
   background-color: #F0EEED;
 }
 
+.btn-success{
+  background-color: green;
+}
+
 .name-subject-profile{
   color: #332C39;
 }
 
 .btn-red{
-  color: white;
-  background-color: #e20000;
+  color: red;
+  background-color: #f0eeed;
 }
 
 // .btn-danger{
@@ -32,6 +36,7 @@
 
 .icon-creator{
   width: 45px;
+  height: 45px;
 }
 
 .request {
@@ -40,11 +45,15 @@
   align-items: center;
   margin: 16px 0;
   padding: 8px;
-  color: #ffffff;
-  background-color: #4e6cf0ef;
+  color: #332C39;
+  background-color: #F0EEED;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: 'Your Chosen Font', sans-serif;
+
+  p{
+    color: #332C39;
+  }
 
   .btn-accepted{
     background-color: #00d26a;
@@ -108,4 +117,9 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 8px;
   background-color: #ffa114;
+}
+
+.edit-button{
+  color: #f0eeed;
+  background-color: #C92C6D;
 }
