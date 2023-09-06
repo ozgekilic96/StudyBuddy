@@ -27,8 +27,11 @@ class PagesController < ApplicationController
     @page_title = "Profile"
     @user = current_user
     @subjects = current_user.subjects
-    @requests = Attendance.joins(:session).where(sessions: { user: current_user })
+    @requests = Attendance.joins(:session)
+                          .where(sessions: { user: current_user })
+                          .where.not(user: current_user)
     @my_requests = Attendance.where(user: current_user)
+                             .where.not(session_id: Session.where(user_id: current_user.id).pluck(:id))
   end
 
   def subjects
@@ -42,7 +45,7 @@ class PagesController < ApplicationController
     if params[:search]
       search_term = "%#{params[:search].downcase}%"
       @groups = Group.where('LOWER(groups.name) LIKE ? OR LOWER(groups.description) LIKE ?', search_term, search_term).distinct
-      @sessions = Session.where('LOWER(name) LIKE ? OR LOWER(address) LIKE ?', search_term, search_term)
+      @sessions = Session.where('LOWER(name) LIKE ? OR LOWER(city) LIKE ?', search_term, search_term)
     else
       @groups = Group.all
       @sessions = Session.all

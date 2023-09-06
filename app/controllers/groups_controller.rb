@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @page_title = "Create Group"
     @group = Group.new
     @subjects = Subject.all
   end
