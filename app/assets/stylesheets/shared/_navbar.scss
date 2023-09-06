@@ -11,10 +11,29 @@
   z-index: 1000;
 }
 .notification-icon{
+  position: relative;
   width: 40px;
   height: 40px;
   padding: 6px;
   object-fit: cover;
+}
+.pending-count {
+  position: absolute;
+  top: -3px; /* Adjust the top position as needed to position the circle */
+  right: -1px; /* Adjust the right position as needed to position the circle */
+  background-color: #C92C6D; /* Circle background color */
+  color: white; /* Text color */
+  border-radius: 50%; /* Make it a circle */
+  width: 20px; /* Adjust the width and height to control the circle size */
+  height: 20px;
+  text-align: center;
+  line-height: 20px; /* Vertically center the text */
+  font-size: 12px; /* Adjust the font size */
+  display: none; /* Initially hide the circle */
+}
+
+.pending-count.show {
+  display: block; /* Show the circle when there are pending requests */
 }
 
 .user-profile img {
