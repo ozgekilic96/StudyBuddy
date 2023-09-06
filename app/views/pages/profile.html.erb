@@ -11,7 +11,7 @@
   </div>
   <h2 class="m-4 mt-5"><strong>Requests to my sessions</strong></h2>
   <% if @requests.empty? %>
-    <p>You don't have any requests</p>
+    <p style="color: #F0EEED">You don't have any requests</p>
   <% end %>
   <% @requests.each do |request| %>
     <div class="request mx-3">
@@ -48,7 +48,7 @@
   <% end %>
   <h2 class="m-4 mt-5"><strong>Submitted requests</strong></h2>
   <% if @my_requests.empty? %>
-    <p>You don't have any submitted requests</p>
+    <p style="color: #f0eeedc3">You don't have any submitted requests</p>
   <% end %>
   <% @my_requests.each do |request| %>
     <% if request.status == "Accepted" %>
@@ -79,7 +79,7 @@
     <div class="card bg-dark"></div>
   <% end %>
   <div class="button-container">
-    <%= link_to "Edit your subjects", profilesubjects_path, class: "btn m-3 edit-button" %>
+    <%= link_to "Edit your subjects", profilesubjects_path, class: "btn m-3 edit-button ", style: "border-radius: 20px;" %>
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>

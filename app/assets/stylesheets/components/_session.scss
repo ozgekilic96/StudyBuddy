@@ -43,6 +43,33 @@ p {
   color: #332C39;
 }
 
+.group-card-search{
+  background-color: #F0EEED;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  font-family: 'Your Chosen Font', sans-serif;
+  
+  .group-details {
+    padding: 20px;
+    color: #0a0a0a;
+
+    .group-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #0a0a0a;
+    }
+
+    .group-description {
+      font-size: 0.9rem;
+      color: #0a0a0a;
+    }
+  }
+}
+
 .group-card {
   display: flex;
   flex-direction: column;
@@ -79,6 +106,7 @@ p {
     }
   }
 }
+
 .header-session {
   margin-top: 30px;
 }
