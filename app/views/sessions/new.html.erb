@@ -1,22 +1,18 @@
 <%= render "shared/navbar" %>
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create Session</h3>
-        <%= simple_form_for @session do |f| %>
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <%= f.input :time %>
-          <%= f.input :address %>
-
-
-          <%= f.association :group, collection: @groups, label: 'Select Group' %>
-
-          <%= f.submit class: "btn btn-primary m-3", style: "background-color: #4e6cf0ef;" %>
-        <% end %>
+<div class="container">
+  <div class="bg-white rounded p-3 shadow m-2">
+    <%= simple_form_for @session do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :time, as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <div class="form-group">
+        <%= f.label :city, 'City' %>
+        <%= f.collection_select :city, german_cities, :to_s, :to_s, { prompt: 'Select a city' }, class: 'form-control' %>
       </div>
-    </div>
+      <%= f.input :street_name, label: 'Street Name' %>
+      <%= f.association :group, collection: @groups, label: 'Select Group' %>
+      <%= f.submit class: "btn btn-primary m-3", style: "background-color: #4e6cf0ef;" %>
+    <% end %>
   </div>
 </div>
 <%= render "shared/navbar_bottom" %>

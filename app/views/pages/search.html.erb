@@ -12,11 +12,11 @@
   <div class="cards">
     <% @groups.each do |group| %>
       <a href="<%= group_path(group) %>" class="group-card">
-        <div class="group-image">
-          <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= group.group_picture %>" />
-        </div>
-        <div class="group-details">
-          <div class="group-name text-center"><%= group.name %></div>
+        <div class="d-flex">
+          <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1693663058/icons/#{group.subject.icon_creator}", class:"icon-creator" %>
+          <div class="group-details">
+            <div class="group-name text-center"><%= group.name %></div>
+          </div>
         </div>
       </a>
     <% end %>
@@ -43,4 +43,3 @@
   <% end %>
 </div>
 <%= render "shared/navbar_bottom" %>
-

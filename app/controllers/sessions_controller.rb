@@ -1,4 +1,14 @@
 class SessionsController < ApplicationController
+  helper_method :german_cities
+
+  def german_cities
+    [
+      "Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart",
+      "Dusseldorf", "Dortmund", "Essen", "Leipzig", "Dresden", "Nuremberg",
+      "Hannover", "Bremen", "Hannover", "Duisburg", "Bochum", "Wuppertal", "Bonn"
+    ]
+  end
+
   def index
     @page_title = "My Sessions"
     @user = current_user
@@ -8,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @page_title = "Create session"
     @session = Session.new
     @groups = current_user.groups
   end
@@ -55,6 +66,6 @@ class SessionsController < ApplicationController
   private
 
   def session_params
-    params.require(:session).permit(:name, :description, :address, :time, :group_id)
+    params.require(:session).permit(:name, :description, :time, :group_id, :city, :street_name, :latitude, :longitude)
   end
 end
