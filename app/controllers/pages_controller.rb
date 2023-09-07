@@ -12,7 +12,7 @@ class PagesController < ApplicationController
     @my_subjects = current_user.subjects.pluck(:id)
     @my_groups = Group.where(subject_id: @my_subjects).pluck(:id)
 
-    @my_sessions = Session.where(group_id: @my_groups)
+    @my_sessions = Session.where(group_id: @my_groups).order(id: :desc)
     @markers = @my_sessions.geocoded.map do |session|
       {
         lat: session.latitude,

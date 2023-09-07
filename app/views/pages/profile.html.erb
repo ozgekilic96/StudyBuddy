@@ -40,8 +40,10 @@
             <%= f.input :status, as: :hidden, input_html: { value: 'Rejected'} %>
             <%= f.submit '❌', class: 'btn btn-light' %>
           <% end %>
-        <% else %>
-          <p class="request-tag"><%= request.status %></p>
+        <% elsif request.status === "Accepted" %>
+          <p class="request-tag-accepted"><%= request.status %></p>
+        <% elsif request.status === "Rejected" %>
+          <p class="request-tag-rejected"><%= request.status %></p>
         <% end %>
       </div>
     </div>
@@ -54,7 +56,7 @@
     <% if request.status == "Accepted" %>
       <div class="card card-accepted mx-3 mb-2">
         <p><%= request.session.name %></p>
-        <p><strong><%= request.status %> ✅</strong></p>
+        <p><strong><%= request.status %></strong></p>
       </div>
     <% elsif request.status == "Rejected" %>
       <div class="card card-rejected mx-3 mb-2">
