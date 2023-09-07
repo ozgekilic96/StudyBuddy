@@ -2,6 +2,7 @@ class Session < ApplicationRecord
   belongs_to :group
   belongs_to :user
   has_many :attendances, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :users, through: :attendances
   validates :name, :city, :street_name, :time, presence: true
   geocoded_by :full_address

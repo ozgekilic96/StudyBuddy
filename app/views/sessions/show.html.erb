@@ -14,7 +14,7 @@
     </div>
   </div>
   <% if Attendance.where(user: current_user, session: @session).empty? %>
-      <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :post }, class: "send-request btn btn-primary mx-3", id: "send-request-button" %>
+    <%= link_to 'Send Request', session_attendances_path(@session), data: { turbo_method: :post }, class: "send-request btn btn-primary mx-3", id: "send-request-button" %>
   <% else %>
     <div class="card-going"> <h6>"You are going this session"</h6> </div>
   <% end %>
