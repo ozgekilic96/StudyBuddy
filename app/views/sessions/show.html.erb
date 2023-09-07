@@ -35,7 +35,7 @@
     <% end %>
     <div class="card-comment-form ">
       <%= simple_form_for [@session, @comment] do |f| %>
-        <%= f.input :content %>
+        <%= f.input :content, class: "rounded" %>
         <%= f.submit "Submit ", class: "btn btn-primary" %>
       <% end %>
     </div>

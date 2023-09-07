@@ -51,7 +51,7 @@ class SessionsController < ApplicationController
     @session = current_user.sessions.find(params[:id])
 
     if @session.update(session_params)
-      redirect_to @session, notice: 'Session was successfully updated'
+      redirect_to @session, notice: 'Yay! 🎉Session was successfully updated'
     else
       render :edit
     end
@@ -60,7 +60,7 @@ class SessionsController < ApplicationController
   def destroy
     @session = Session.find(params[:id])
     @session.destroy
-    redirect_to sessions_path, notice: 'You succesfully deleted this session'
+    redirect_to sessions_path, notice: 'Yay! 🎉You succesfully deleted this session'
   end
 
   private
