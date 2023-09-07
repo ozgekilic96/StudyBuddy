@@ -580,7 +580,7 @@ Session.create!(
 )
 Attendance.create!(
   user: giovane,
-  session_id: 5,
+  session_id: 1,
   status: "Accepted"
 )
 Session.create!(
@@ -594,7 +594,7 @@ Session.create!(
 )
 Attendance.create!(
   user: ulrich,
-  session_id: 6,
+  session_id: 2,
   status: "Accepted"
 )
 Session.create!(
@@ -608,7 +608,7 @@ Session.create!(
 )
 Attendance.create!(
   user: giovane,
-  session_id: 7,
+  session_id: 3,
   status: "Accepted"
 )
 Session.create!(
@@ -622,7 +622,7 @@ Session.create!(
 )
 Attendance.create!(
   user: emma,
-  session_id: 2,
+  session_id: 4,
   status: "Accepted"
 )
 Session.create!(
@@ -636,7 +636,7 @@ Session.create!(
 )
 Attendance.create!(
   user: santi,
-  session_id: 4,
+  session_id: 5,
   status: "Accepted"
 )
 Session.create!(
@@ -650,6 +650,6 @@ Session.create!(
 )
 Attendance.create!(
   user: adam,
-  session_id: 1,
+  session_id: 6,
   status: "Accepted"
 )
