@@ -169,7 +169,11 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: -1px;
+
+  h2{
+    margin-left: 0px;
+  }
 }
 
 .card-general-comment .comment-content {
@@ -218,24 +222,4 @@ margin-bottom: 0;
   max-width: 300px;
   margin-left: 3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.card-general-comment h2 {
-  font-weight: bold;
-}
-
-.card-general-comment .user-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.card-general-comment .comment-content {
-  margin: 0;
-}
-
-h6 {
-margin-bottom: 0;
-
 }
