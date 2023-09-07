@@ -51,12 +51,12 @@ class GroupsController < ApplicationController
     @membership.save
     @session = Session.find_by(group: @group)
 
-    redirect_to @group, notice: 'You have joined the group.'
+    redirect_to @group, notice: 'Yay! 🎉 You have joined the group.'
   end
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    redirect_to groups_path, notice: 'You succesfully deleted this group'
+    redirect_to groups_path, notice: 'Yay! 🎉You succesfully deleted this group'
   end
 
   private

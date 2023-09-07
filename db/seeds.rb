@@ -37,7 +37,37 @@ ulrich = User.create!(
   age: 24
 )
 
-15.times do
+emma = User.create!(
+  first_name: "Emma",
+  last_name: "Thofe",
+  email: "emma@icloud.com",
+  password: "123456",
+  address: "Berlin",
+  picture: "90188399_360_job5lc",
+  age: 24
+)
+
+adam = User.create!(
+  first_name: "Adam",
+  last_name: "Thofehrn",
+  email: "adam@icloud.com",
+  password: "123456",
+  address: "Berlin",
+  picture: "mt74bsqhtqmlacjewm1e_360_hns5q8",
+  age: 24
+)
+
+santi = User.create!(
+  first_name: "Santiego",
+  last_name: "santi",
+  email: "santi@icloud.com",
+  password: "123456",
+  address: "Berlin",
+  picture: "xrbi2mzjyawsdisknhdd_360_nzrqe8",
+  age: 24
+)
+
+12.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   email_name = "#{first_name.downcase}.#{last_name.downcase}"
@@ -135,13 +165,7 @@ Group.create!(
   subject_id: "1",
   user_id: rand(1..15)
 )
-microbiology_group = Group.create!(
-  name: "Microbiology",
-  description: "Microbiology is the scientific study of microscopic organisms, such as bacteria, viruses, and fungi, delving into their biology and impact on health and the environment",
-  group_picture: "microbiology_smrx0f",
-  subject_id: 2,
-  user_id: rand(1..15)
-)
+
 ecology_group = Group.create!(
   name: "Ecology",
   description: "Relationships between organisms and their environment, examining the interactions that shape ecosystems and biodiversity.",
@@ -149,10 +173,11 @@ ecology_group = Group.create!(
   subject_id: 2,
   user_id: rand(1..15)
 )
-Group.create!(
-  name: "Genetics",
-  description: "Join us for bright future",
-  group_picture: "genetic_duts9m",
+
+microbiology_group = Group.create!(
+  name: "Microbiology",
+  description: "Microbiology is the scientific study of microscopic organisms, such as bacteria, viruses, and fungi, delving into their biology and impact on health and the environment",
+  group_picture: "microbiology_smrx0f",
   subject_id: 2,
   user_id: rand(1..15)
 )
@@ -326,7 +351,7 @@ Group.create!(
   subject_id: 10,
   user_id: rand(1..15)
 )
-Group.create!(
+music = Group.create!(
   name: "Music",
   description: "Explores the art, theory, and history of musical expression across cultures and genres",
   group_picture: "music_raelne",
@@ -432,27 +457,23 @@ Group.create!(
   subject_id: 15,
   user_id: rand(1..15)
 )
-slovenian_group = Group.create!(
-  name: "Slovenian",
-  description: "Come and learn Slovenian with us",
-  group_picture: "slovenian_d0bea6",
+
+polish_group = Group.create!(
+  name: "Easy Polish",
+  description: "Polish never was that easy",
+  group_picture: "image_480_iylowg",
   subject_id: 16,
   user_id: rand(1..15)
 )
-ukranian_group = Group.create!(
-  name: "Ukranian",
-  description: "Come and learn Ukranian with us",
-  group_picture: "Ukrainian_juyvv3",
-  subject_id: 16,
-  user_id: rand(1..15)
-)
-Group.create!(
+
+swedish_group = Group.create!(
   name: "Swedish",
   description: "Come and learn Swedish with us",
   group_picture: "swedish.jpg_tw708e",
   subject_id: 16,
   user_id: rand(1..15)
 )
+
 Group.create!(
   name: "Literature",
   description: "explores the written and artistic expression of human culture through various forms of storytelling and narrative",
@@ -460,6 +481,7 @@ Group.create!(
   subject_id: 17,
   user_id: rand(1..15)
 )
+
 Group.create!(
   name: "History",
   description: "Examines past events, societies, and cultures to understand the human experience and its impact on the present",
@@ -481,7 +503,7 @@ Group.create!(
   subject_id: 18,
   user_id: rand(1..15)
 )
-Group.create!(
+coding = Group.create!(
   name: "Software Engineering",
   description: "Involves designing, building, and maintaining software systems to meet real-world needs",
   group_picture: "sofware_nsziqo",
@@ -548,11 +570,59 @@ Group.create!(
 end
 
 Session.create!(
+  name: "Easy Polish with Adam :)",
+  description: " Hey guys, I'm native Polish speaker and I want to learn German. Come and join me for language exchange!:)",
+  time: "09.07.2023 13:20",
+  group: polish_group,
+  user: adam,
+  city: "Berlin",
+  street_name: "karl marx allee 31"
+)
+Session.create!(
+  name: "Lets practice our Swedish ! ",
+  description: "Anybody who wants to practice Slovenian welcome to join me !:)",
+  time: "10.07.2023 16:20",
+  group: swedish_group,
+  user: giovane,
+  city: "Berlin",
+  street_name: "Rudi-Dutschke-Straße 26"
+)
+
+Session.create!(
+  name: "JavaScript - Stimulus",
+  description: " Lets code !:)",
+  time: "09.07.2023 13:25",
+  group: coding,
+  user: emma,
+  city: "Berlin",
+  street_name: "Pflüger Straße 11"
+)
+
+Session.create!(
+  name: "Ruby on Rails by Santi",
+  description: "Lets write our piece of code!:)",
+  time: "09.07.2023 15:30",
+  group: coding,
+  user: santi,
+  city: "Berlin",
+  street_name: "Alt-Moabit 141"
+)
+
+Session.create!(
+  name: "Do re mi fa sol la..🎵 ",
+  description: "Let me introduce you Brazilian traditional music",
+  time: "09.07.2023 13:25",
+  group: music,
+  user: giovane,
+  city: "Berlin",
+  street_name: "BrunnenStraße 125 "
+)
+Session.create!(
   name: "Ecology- Carbon Cycling & Sequestration.",
   description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
   time: "09.07.2023 19:20",
   group: ecology_group,
-  user: ozge,
+  user: ulrich,
   city: "Berlin",
   street_name: "Rigaer Strasse 5"
 )
@@ -563,46 +633,9 @@ Session.create!(
   group: microbiology_group,
   user: giovane,
   city: "Berlin",
-  street_name: "Pflüger Strasse 3"
+  street_name: "Danziger Str. 1 "
 )
 
-Session.create!(
-  name: "Lets practice our Slovenian ! :)",
-  description: "Anybody who wants to practice Slovenian welcome to join me !:)",
-  time: "10.07.2023 16:20",
-  group: slovenian_group,
-  user: giovane,
-  city: "Berlin",
-  street_name: "Rudi-Dutschke-Straße 26"
-)
-
-Session.create!(
-  name: "Learn Ukrainian & Language exchange:)",
-  description: " I'm new in Berlin and I want to learn German. If you want to learn Ukrainian , lets exchange the languages!:)",
-  time: "09.07.2023 13:20",
-  group: ukranian_group,
-  user: ozge,
-  city: "Berlin",
-  street_name: "karl marx allee 31"
-)
-Session.create!(
-  name: "Learn Ukrainian",
-  description: " I'm new in Berlin and I want to learn German. If you want to learn Ukrainian , lets exchange the languages!:)",
-  time: "09.07.2023 13:25",
-  group_id: 2,
-  user: giovane,
-  city: "Berlin",
-  street_name: "karl marx allee 35"
-)
-Session.create!(
-  name: "JavaScript Lovers",
-  description: " Lets code !:)",
-  time: "09.07.2023 13:25",
-  group_id: 18,
-  user: giovane,
-  city: "Berlin",
-  street_name: "karl marx allee 35"
-)
 Attendance.create!(
   user: ulrich,
   session_id: 5
@@ -612,19 +645,19 @@ Attendance.create!(
   session_id: 1
 )
 Attendance.create!(
-  user: ozge,
+  user: giovane,
   session_id: 2
 )
 Attendance.create!(
-  user: ozge,
+  user: ulrich,
   session_id: 3
 )
 Attendance.create!(
-  user: ozge,
+  user: giovane,
   session_id: 1
 )
 Attendance.create!(
-  user: ozge,
+  user: ulrich,
   session_id: 4
 )
 Attendance.create!(
