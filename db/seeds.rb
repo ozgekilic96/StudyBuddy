@@ -30,7 +30,7 @@ ozge = User.create!(
 ulrich = User.create!(
   first_name: "Ulrich",
   last_name: "Thofehrn",
-  email: "welfito@icloud.com",
+  email: "welfito@gmail.com",
   password: "123456",
   address: "Berlin",
   picture: "ulrich_wb7zuy",
@@ -40,7 +40,7 @@ ulrich = User.create!(
 emma = User.create!(
   first_name: "Emma",
   last_name: "Thofe",
-  email: "emma@icloud.com",
+  email: "emma@gmail.com",
   password: "123456",
   address: "Berlin",
   picture: "90188399_360_job5lc",
@@ -50,7 +50,7 @@ emma = User.create!(
 adam = User.create!(
   first_name: "Adam",
   last_name: "Tomczyk",
-  email: "adam@icloud.com",
+  email: "adam@gmail.com",
   password: "123456",
   address: "Berlin",
   picture: "mt74bsqhtqmlacjewm1e_360_hns5q8",
@@ -60,7 +60,7 @@ adam = User.create!(
 santi = User.create!(
   first_name: "Santi",
   last_name: "Ago",
-  email: "santi@icloud.com",
+  email: "santi@gmail.com",
   password: "123456",
   address: "Berlin",
   picture: "xrbi2mzjyawsdisknhdd_360_nzrqe8",
@@ -519,7 +519,7 @@ Group.create!(
 )
 Group.create!(
   name: "Human Rights Studies",
-  description: "human_rights",
+  description: "Human Rights",
   group_picture: "human_rights_omo05q",
   subject_id: 19,
   user_id: rand(1..15)
@@ -578,6 +578,11 @@ Session.create!(
   city: "Berlin",
   street_name: "karl marx allee 31"
 )
+Attendance.create!(
+  user: adam,
+  session_id: 1,
+  status: "Accepted"
+)
 Session.create!(
   name: "Lets practice our Swedish ! ",
   description: "Anybody who wants to practice Slovenian welcome to join me !:)",
@@ -586,6 +591,11 @@ Session.create!(
   user: emma,
   city: "Berlin",
   street_name: "Rudi-Dutschke-Straße 26"
+)
+Attendance.create!(
+  user: emma,
+  session_id: 2,
+  status: "Accepted"
 )
 
 Session.create!(
@@ -597,7 +607,11 @@ Session.create!(
   city: "Berlin",
   street_name: "Pflüger Straße 11"
 )
-
+Attendance.create!(
+  user: emma,
+  session_id: 3,
+  status: "Accepted"
+)
 Session.create!(
   name: "Ruby on Rails by Santi",
   description: "Lets write our piece of code!:)",
@@ -607,7 +621,11 @@ Session.create!(
   city: "Berlin",
   street_name: "Alt-Moabit 141"
 )
-
+Attendance.create!(
+  user: santi,
+  session_id: 4,
+  status: "Accepted"
+)
 Session.create!(
   name: "Do re mi fa sol la..🎵 ",
   description: "Let me introduce you Brazilian traditional music",
@@ -617,14 +635,24 @@ Session.create!(
   city: "Berlin",
   street_name: "BrunnenStraße 125 "
 )
+Attendance.create!(
+  user: giovane,
+  session_id: 5,
+  status: "Accepted"
+)
 Session.create!(
   name: "Ecology- Carbon Cycling & Sequestration.",
-  description: "I have an exam next week, i want somebody to study Carbon Cycling & Sequestration ",
+  description: "I have an exam next week, I want somebody to study Carbon Cycling & Sequestration ",
   time: "09.07.2023 19:20",
   group: ecology_group,
   user: ulrich,
   city: "Berlin",
   street_name: "Rigaer Strasse 5"
+)
+Attendance.create!(
+  user: ulrich,
+  session_id: 6,
+  status: "Accepted"
 )
 Session.create!(
   name: "Microbiology - Viruses :)",
@@ -635,36 +663,8 @@ Session.create!(
   city: "Berlin",
   street_name: "Danziger Str. 1 "
 )
-
-Attendance.create!(
-  user: ulrich,
-  session_id: 5
-)
-Attendance.create!(
-  user: ulrich,
-  session_id: 1
-)
 Attendance.create!(
   user: giovane,
-  session_id: 2
-)
-Attendance.create!(
-  user: ulrich,
-  session_id: 3
-)
-Attendance.create!(
-  user: giovane,
-  session_id: 1
-)
-Attendance.create!(
-  user: ulrich,
-  session_id: 4
-)
-Attendance.create!(
-  user: giovane,
-  session_id: 4
-)
-Attendance.create!(
-  user: giovane,
-  session_id: 2
+  session_id: 7,
+  status: "Accepted"
 )
