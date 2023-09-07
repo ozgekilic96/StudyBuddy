@@ -5,9 +5,8 @@ a{
 .session-card {
   display: flex;
   flex-direction: column;
-  background-color: #F5F5F5;
+  background-color: #F0EEED;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin: 20px;
   overflow: hidden;
   font-family: 'Your Chosen Font', sans-serif;
@@ -37,7 +36,6 @@ h2 {
 .session-name {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
   color: #332C39;
 }
 
@@ -58,18 +56,18 @@ p {
 
   .group-details {
     padding: 20px;
-    color: #0a0a0a;
+    color: #332C39;
 
     .group-name {
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
-      color: #0a0a0a;
+      color: #332C39;
     }
 
     .group-description {
       font-size: 0.9rem;
-      color: #0a0a0a;
+      color: #332C39;
     }
   }
 }
@@ -84,6 +82,7 @@ p {
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   font-family: 'Your Chosen Font', sans-serif;
+  color: #332C39;
 
 
   .group-image {
@@ -95,6 +94,8 @@ p {
 
   .group-details {
     color: #0a0a0a;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
     .group-name {
       font-size: 16px;
@@ -102,6 +103,10 @@ p {
       margin-bottom: 7px;
       color: #0a0a0a;
     }
+
+
+
+
 
     .group-description {
       font-size: 0.9rem;
@@ -113,6 +118,65 @@ p {
 .header-session {
   margin-top: 30px;
 }
+
+
+
+
+
+.card-comment {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.card-name-comment {
+  margin-top: 10px;
+}
+.context {
+  color:black
+}
+.card-going {
+  background-color: #2E8A99;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color:F0EEED;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 5px;
+  text-align-last: center;
+}
+
+
+.card-general-comment {
+  border: 1px solid #bbbaba;
+  background-color: #F0EEED;
+  border-radius: 10px;
+  padding: 5px;
+  max-width: 300px;
+  margin-left: 3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-general-comment h2 {
+  font-weight: bold;
+}
+
+.card-general-comment .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-general-comment .comment-content {
+  margin: 0;
+}
+
+h6 {
+margin-bottom: 0;
+
+}
+
 
 
 
