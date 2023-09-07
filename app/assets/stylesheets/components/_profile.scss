@@ -68,10 +68,19 @@
     display: flex;
     align-items: center;
   }
-  .request-tag {
+  .request-tag-accepted {
     margin: 1px 4px;
     padding: 2px 5px 0px 5px;
-    background-color: #bfbfbf;
+    background-color: #05be62;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .request-tag-rejected {
+    margin: 1px 4px;
+    padding: 2px 5px 0px 5px;
+    background-color: #c73a3a;
     color: white;
     border-radius: 8px;
     font-weight: bold;
@@ -100,7 +109,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 8px;
-  background-color: #00d26a;
+  background-color: #05be62;
 }
 
 .card-rejected{
@@ -108,7 +117,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 8px;
-  background-color: #f92f60;
+  background-color: #c73a3a;
 }
 
 .card-pending{
