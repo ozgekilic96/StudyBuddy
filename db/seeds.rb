@@ -160,7 +160,7 @@ Group.create!(
 )
 Group.create!(
   name: "Quantum mechanics",
-  description: "We are waitig for all quantum lovers",
+  description: "We are waiting for all quantum lovers",
   group_picture: "Quantum_h4eydq",
   subject_id: "1",
   user_id: rand(1..15)
@@ -570,63 +570,6 @@ Group.create!(
 end
 
 Session.create!(
-  name: "Easy Polish with Adam :)",
-  description: " Hey guys, I'm native Polish speaker and I want to learn German. Come and join me for language exchange!:)",
-  time: "09.07.2023 13:20",
-  group: polish_group,
-  user: adam,
-  city: "Berlin",
-  street_name: "karl marx allee 31"
-)
-Attendance.create!(
-  user: adam,
-  session_id: 1,
-  status: "Accepted"
-)
-Session.create!(
-  name: "Lets practice our Swedish ! ",
-  description: "Anybody who wants to practice Slovenian welcome to join me !:)",
-  time: "10.07.2023 16:20",
-  group: swedish_group,
-  user: emma,
-  city: "Berlin",
-  street_name: "Rudi-Dutschke-Straße 26"
-)
-Attendance.create!(
-  user: emma,
-  session_id: 2,
-  status: "Accepted"
-)
-
-Session.create!(
-  name: "JavaScript - Stimulus",
-  description: " Lets code !:)",
-  time: "09.07.2023 13:25",
-  group: coding,
-  user: emma,
-  city: "Berlin",
-  street_name: "Pflüger Straße 11"
-)
-Attendance.create!(
-  user: emma,
-  session_id: 3,
-  status: "Accepted"
-)
-Session.create!(
-  name: "Ruby on Rails by Santi",
-  description: "Lets write our piece of code!:)",
-  time: "09.07.2023 15:30",
-  group: coding,
-  user: santi,
-  city: "Berlin",
-  street_name: "Alt-Moabit 141"
-)
-Attendance.create!(
-  user: santi,
-  session_id: 4,
-  status: "Accepted"
-)
-Session.create!(
   name: "Do re mi fa sol la..🎵 ",
   description: "Let me introduce you Brazilian traditional music",
   time: "09.07.2023 13:25",
@@ -666,5 +609,47 @@ Session.create!(
 Attendance.create!(
   user: giovane,
   session_id: 7,
+  status: "Accepted"
+)
+Session.create!(
+  name: "Lets practice our Swedish ! ",
+  description: "Anybody who wants to practice Slovenian welcome to join me !:)",
+  time: "10.07.2023 16:20",
+  group: swedish_group,
+  user: emma,
+  city: "Berlin",
+  street_name: "Rudi-Dutschke-Straße 26"
+)
+Attendance.create!(
+  user: emma,
+  session_id: 2,
+  status: "Accepted"
+)
+Session.create!(
+  name: "Ruby on Rails by Santi",
+  description: "Lets write our piece of code!:)",
+  time: "09.07.2023 15:30",
+  group: coding,
+  user: santi,
+  city: "Berlin",
+  street_name: "Alt-Moabit 141"
+)
+Attendance.create!(
+  user: santi,
+  session_id: 4,
+  status: "Accepted"
+)
+Session.create!(
+  name: "Easy Polish with Adam :)",
+  description: " Hey guys, I'm native Polish speaker and I want to learn German. Come and join me for language exchange!:)",
+  time: "09.07.2023 13:20",
+  group: polish_group,
+  user: adam,
+  city: "Berlin",
+  street_name: "karl marx allee 31"
+)
+Attendance.create!(
+  user: adam,
+  session_id: 1,
   status: "Accepted"
 )
