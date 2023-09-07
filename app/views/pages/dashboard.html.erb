@@ -7,7 +7,13 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-  <h2 class="text-center mt-3"><strong>Upcoming Sessions</strong></h2>
+  <h2 class="text-center mt-3 upcoming"><strong>Upcoming Sessions</strong></h2>
+  <% if @my_sessions.empty? %>
+    <p class="text-center text-light mt-3">You don't have any sessions :(</p>
+    <div class="button-container text-center">
+      <%= link_to "Edit your subjects", profilesubjects_path, class: "btn m-3 edit-button ", style: "border-radius: 20px;" %>
+    </div>
+  <% end %>
   <% @my_sessions.each do |session| %>
     <div class="session-card">
       <div class="session-details">

@@ -26,8 +26,8 @@
     <% if @session.attended_by_current_user?(current_user) %>
             <strong><h1>Comments</h1> </strong>
       <% @comments.each do |comment| %>
-        <div class="card-general-comment">
-          <div class="user-info">
+        <div class="card-general-comment mb-2">
+          <div class="user-info text-dark mx-0">
             <h2><%= comment.user.first_name %></h2>
             <p><%= comment.created_at.strftime('%H:%M:%S') %></p>
           </div>
