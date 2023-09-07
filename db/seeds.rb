@@ -49,7 +49,7 @@ emma = User.create!(
 
 adam = User.create!(
   first_name: "Adam",
-  last_name: "Thofehrn",
+  last_name: "Tomczyk",
   email: "adam@icloud.com",
   password: "123456",
   address: "Berlin",
@@ -58,8 +58,8 @@ adam = User.create!(
 )
 
 santi = User.create!(
-  first_name: "Santiego",
-  last_name: "santi",
+  first_name: "Santi",
+  last_name: "Ago",
   email: "santi@icloud.com",
   password: "123456",
   address: "Berlin",
@@ -583,7 +583,7 @@ Session.create!(
   description: "Anybody who wants to practice Slovenian welcome to join me !:)",
   time: "10.07.2023 16:20",
   group: swedish_group,
-  user: giovane,
+  user: emma,
   city: "Berlin",
   street_name: "Rudi-Dutschke-Straße 26"
 )
