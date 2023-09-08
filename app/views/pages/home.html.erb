@@ -1,25 +1,27 @@
 <div class="background-home">
-  <div class="container-home text-center mt-3">
-    <div class="title-home">
-      <h1>StudyBuddy</h1>
-    </div>
-    <p class="mb-4 text-home">Group. Learn. Thrive.</p>
-    <div class="homepage-img">
-      <%= image_tag "back.png", style: "width: 350px; margin: 0 auto; max-height: 380px" %>
-    </div>
-    <div class="header-home mx-2">
-      <div class="subtitle-home">
-        <h5 class="mt-2">Welcome to StudyBuddy</h5>
+  <div class="container-home text-center mt-1">
+    <div class="container mt-1">
+      <div class="title-home">
+        <h1>StudyBuddy</h1>
       </div>
-      <div class="description-home">
-        <h6>Empower your studies with collaborative learning on StudyBuddy's dynamic platform.</h6>
+      <p class="mb-4 text-home">Group. Learn. Thrive.</p>
+      <div class="homepage-img">
+        <%= image_tag "back.png", style: "width: 350px; margin: 0 auto; max-height: 380px" %>
       </div>
-    </div>
-    <div class="mt-5">
-      <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
-    </div>
-    <div class="mt-3">
-      <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      <div class="header-home mx-2">
+        <div class="subtitle-home">
+          <h5 class="mt-2">Welcome to StudyBuddy</h5>
+        </div>
+        <div class="description-home">
+          <h6>Empower your studies with collaborative learning on StudyBuddy's dynamic platform.</h6>
+        </div>
+      </div>
+      <div class="mt-5">
+        <%= link_to "Register", new_user_registration_path, class: "btn btn-primary" %>
+      </div>
+      <div class="mt-3">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
