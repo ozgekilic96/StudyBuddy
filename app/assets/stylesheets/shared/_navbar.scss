@@ -81,3 +81,13 @@
   color: #F0EEED; /* Cor do ícone */
   font-size: 18px; /* Tamanho do ícone */
 }
+
+.nav-link {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 0px;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -17,6 +17,14 @@ a{
   }
 }
 
+@media (min-width: 992px) {
+  .session-card {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 650px;
+  }
+}
+
 h2 {
   font-family: 'Your Chosen Font', sans-serif;
   margin-left: 20px;

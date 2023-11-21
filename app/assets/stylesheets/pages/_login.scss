@@ -1,0 +1,22 @@
+.shared-buttons{
+  margin-left: 83px;
+}
+
+@media (min-width: 992px) {
+  .form-control{
+    width: 500px;
+    margin: auto;
+  }
+  // .form-check {
+  //   margin-left: 248px;
+  // }
+  // .form-actions{
+  //   margin-left: 493px;
+  // }
+  .login-btn{
+    margin-left: 283px;
+  }
+  .shared-buttons{
+    margin-left: 527px;
+  }
+}

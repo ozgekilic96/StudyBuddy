@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only:[:dashboard, :home]
 
   def home
     if current_user
@@ -8,11 +8,17 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @page_title = "Hello, #{current_user.first_name}"
-    @my_subjects = current_user.subjects.pluck(:id)
-    @my_groups = Group.where(subject_id: @my_subjects).pluck(:id)
+    if current_user
+      @page_title = "Hello, #{current_user.first_name}"
+      @my_subjects = current_user.subjects.pluck(:id)
+      @my_sessions = Session.where(group_id: @my_groups).order(id: :desc)
+    else
+      @page_title = "Hello, Guest"
+      @default = Session.all
+      @my_sessions = Session.all
+    end
 
-    @my_sessions = Session.where(group_id: @my_groups).order(id: :desc)
+    @my_groups = Group.where(subject_id: @my_subjects).pluck(:id)
     @markers = @my_sessions.geocoded.map do |session|
       {
         lat: session.latitude,
