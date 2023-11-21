@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   helper_method :german_cities
+  skip_before_action :authenticate_user!, only:[:show]
 
   def german_cities
     [

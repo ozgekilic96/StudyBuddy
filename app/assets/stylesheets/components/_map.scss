@@ -6,6 +6,13 @@
   }
 }
 
+@media (min-width: 992px) {
+  .map{
+    width: 650px;
+    margin: auto;
+  }
+}
+
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
