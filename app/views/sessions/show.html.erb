@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<div class="container">
+<div class="container text-center">
 
   <div class="group-card">
     <h2 class="mt-2 text-center"><strong><%= @session.name %></strong></h2>
@@ -40,7 +40,7 @@
     <div class="card-comment-form ">
       <%= simple_form_for [@session, @comment] do |f| %>
         <%= f.input :content, class: "rounded" %>
-        <%= f.submit "Submit ", class: ".submit-button" %>
+        <%= f.submit "Submit ", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
