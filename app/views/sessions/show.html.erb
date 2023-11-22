@@ -1,7 +1,7 @@
 <%= render "shared/navbar" %>
 <div class="container">
 
-  <div class="group-card mx-3">
+  <div class="group-card">
     <h2 class="mt-2 text-center"><strong><%= @session.name %></strong></h2>
     <img src="https://res.cloudinary.com/dbe6henkk/image/upload/v1693559281/<%= @session.group.group_picture %>" />
     <div class="session-card">
@@ -40,7 +40,7 @@
     <div class="card-comment-form ">
       <%= simple_form_for [@session, @comment] do |f| %>
         <%= f.input :content, class: "rounded" %>
-        <%= f.submit "Submit ", class: "btn btn-primary" %>
+        <%= f.submit "Submit ", class: ".submit-button" %>
       <% end %>
     </div>
   </div>
