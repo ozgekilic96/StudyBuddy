@@ -96,9 +96,9 @@ p {
   font-family: 'Your Chosen Font', sans-serif;
   color: #332C39;
 
-
-  .group-image {
-    max-width: 100%;
+}
+.group-image {
+  max-width: 100%;
     height: auto;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for picture */
@@ -125,7 +125,7 @@ p {
       color: #0a0a0a;
     }
   }
-}
+
 
 .header-session {
   margin-top: 30px;
@@ -189,7 +189,7 @@ p {
 }
 
 h6 {
-margin-bottom: 0;
+  margin-bottom: 0;
 
 }
 
@@ -230,4 +230,22 @@ margin-bottom: 0;
   max-width: 300px;
   margin-left: 3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (min-width: 992px) {
+  .group-card{
+    width: 600px;
+    margin-left: 350px;
+  }
+
+  .card-going{
+    width: 300px;
+    margin: auto;
+  }
+
+  .comments-card{
+    align-items: center;
+    justify-content: center;
+  }
 }
