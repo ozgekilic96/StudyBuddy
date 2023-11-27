@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     if current_user
       @page_title = "Hello, #{current_user.first_name}"
       @my_subjects = current_user.subjects.pluck(:id)
+      @my_groups = Group.where(subject_id: @my_subjects).pluck(:id)
       @my_sessions = Session.where(group_id: @my_groups).order(id: :desc)
     else
       @page_title = "Hello, Guest"
